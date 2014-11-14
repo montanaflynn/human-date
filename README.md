@@ -4,29 +4,21 @@ Making dates and times readable for humans. Forks and pull requests most welcome
 
 ### Install
 
-```shell
-npm install human-date --save
-```
+`npm install human-date --save`
 
 ### Usage
 
-```
-hdate.date(arg)
-```
+`hdate.date(arg)`
 
-- __arg__ can be a date object or string that parses into a date object.
+- _arg_ can be a date object or string that parses into a date object.
 
-```
-hdate.time(arg)
-```
+`hdate.time(arg)`
 
-- __arg__ can be an integer representing seconds or a date string / object. Positive numbers represent the future and negative the past.
+- _arg_ can be an integer representing seconds or a date string / object. Positive numbers represent the future and negative the past.
 
-```
-hdate.month(arg)
-```
+`hdate.month(arg)`
 
-- __arg__ can be an integer representing the month or a date string / object. Month number is not 0 indexed, for instance 1 represents January.
+- _arg_ can be an integer representing the month or a date string / object. Month number is not 0 indexed, for instance 1 represents January.
 
 ### Example
 

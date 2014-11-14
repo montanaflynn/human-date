@@ -16,21 +16,27 @@ var hdate = require('human-date')
 
 - `arg` can be a date object or string that parses into a date object.
 
-```js
-hdate.date('8-16-1987')
-// August 16th, 1987
-
-hdate.date(new Date('8-16-1987'))
-// August 16th, 1987
-```
-
 #### hdate.time(arg)
 
 - `arg` can be an integer representing seconds or a date string / object. 
 
 __Note:__ Positive numbers represent the future and negative the past.
 
+#### hdate.month(arg)
+
+- `arg` can be an integer representing the month or a date string / object.
+
+__Note:__ Month number does not start at 0. For instance 1 Represents January.
+
+### Examples
+
 ```js
+hdate.date('8-16-1987')
+// August 16th, 1987
+
+hdate.date(new Date('8-16-1987'))
+// August 16th, 1987
+
 hdate.time(4)
 // 4 seconds from now
 
@@ -45,15 +51,7 @@ hdate.time("8-16-2020")
 
 hdate.time(new Date("8-16-1987"))
 // 27 years 96 days 21 hours 47 minutes 2 seconds ago
-```
 
-#### hdate.month(arg)
-
-- `arg` can be an integer representing the month or a date string / object.
-
-__Note:__ Month number does not start at 0. For instance 1 Represents January.
-
-```js
 hdate.month(8)
 // August
 

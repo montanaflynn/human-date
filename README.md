@@ -2,19 +2,15 @@
 
 Making dates and times readable for humans. Forks and pull requests most welcomed.
 
-### Install
+### Usage
 
 ```shell
 npm install human-date --save
 ```
 
-### API
+#### `.date(arg)`
 
-#### .date(arg)
-
-- __arg__ a date object or string that parses into a date object.
-
-_Examples:_
+- `arg` can be a date object or string that parses into a date object.
 
 ```js
 hdate.date('8-16-1987')
@@ -24,15 +20,11 @@ hdate.date(new Date('8-16-1987'))
 // August 16th, 1987
 ```
 
-#### .time(arg)
+#### `.time(arg)`
 
-- __arg__ an integer representing seconds or a date string / object. 
+- `arg` can be an integer representing seconds or a date string / object. 
 
-_Notes:_
-
-Positive numbers represent the future and negative the past.
-
-_Examples:_
+__Note:__ Positive numbers represent the future and negative the past.
 
 ```js
 hdate.time(4)
@@ -51,15 +43,11 @@ hdate.time(new Date("8-16-1987"))
 // 27 years 96 days 21 hours 47 minutes 2 seconds ago
 ```
 
-#### .month(arg)
+#### `.month(arg)`
 
-- __arg__ an integer representing the month or a date string / object.
+- `arg` can be an integer representing the month or a date string / object.
 
-_Notes:_
-
-Month number is not 0 indexed. 1 Represents January and 12 December.
-
-_Examples:_
+__Note:__ Month number does not start at 0. For instance 1 Represents January.
 
 ```js
 hdate.month(8)

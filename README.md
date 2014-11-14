@@ -10,15 +10,21 @@ npm install human-date --save
 
 ### Usage
 
-#### `hdate.date(arg)`
+```
+hdate.date(arg)
+```
 
 - __arg__ can be a date object or string that parses into a date object.
 
-#### `hdate.time(arg)`
+```
+hdate.time(arg)
+```
 
 - __arg__ can be an integer representing seconds or a date string / object. Positive numbers represent the future and negative the past.
 
-#### `hdate.month(arg)`
+```
+hdate.month(arg)
+```
 
 - __arg__ can be an integer representing the month or a date string / object. Month number is not 0 indexed, for instance 1 represents January.
 

@@ -8,7 +8,11 @@ Making dates and times readable for humans. Forks and pull requests most welcome
 npm install human-date --save
 ```
 
-#### `.date(arg)`
+```js
+var hdate = require('human-date')
+```
+
+#### hdate.date(arg)
 
 - `arg` can be a date object or string that parses into a date object.
 
@@ -20,7 +24,7 @@ hdate.date(new Date('8-16-1987'))
 // August 16th, 1987
 ```
 
-#### `.time(arg)`
+#### hdate.time(arg)
 
 - `arg` can be an integer representing seconds or a date string / object. 
 
@@ -43,7 +47,7 @@ hdate.time(new Date("8-16-1987"))
 // 27 years 96 days 21 hours 47 minutes 2 seconds ago
 ```
 
-#### `.month(arg)`
+#### hdate.month(arg)
 
 - `arg` can be an integer representing the month or a date string / object.
 

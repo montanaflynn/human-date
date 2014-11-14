@@ -2,15 +2,12 @@
 
 Making dates and times readable for humans. Forks and pull requests most welcomed.
 
-### Usage
-
+### Install
 ```shell
 npm install human-date --save
 ```
 
-```js
-var hdate = require('human-date')
-```
+### Usage
 
 #### hdate.date(arg)
 
@@ -28,9 +25,11 @@ __Note:__ Positive numbers represent the future and negative the past.
 
 __Note:__ Month number does not start at 0. For instance 1 Represents January.
 
-### Examples
+### Example
 
 ```js
+var hdate = require('human-date')
+
 hdate.date('8-16-1987')
 // August 16th, 1987
 

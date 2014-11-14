@@ -1,0 +1,26 @@
+{
+  "name": "human-date",
+  "version": "0.1.0",
+  "description": "Return dates and times in easily readable formats",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Montana Flynn",
+  "license": "ISC",
+  "keywords": [
+    "date",
+    "time",
+    "human",
+    "humanize",
+    "readable"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/montanaflynn/human-date.git"
+  },
+  "bugs": {
+    "url": "https://github.com/montanaflynn/human-date/issues"
+  },
+  "homepage": "https://github.com/montanaflynn/human-date"
+}

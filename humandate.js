@@ -95,63 +95,6 @@
       var year = date.getFullYear();
       return monthName + ' ' + humanDate + ', ' + year;
     },
-    startOfDay: function startOfDay(input) {
-      var date = new Date(input);
-      date.setHours(0, 0, 0, 0);
-      date.setMinutes(date.getTimezoneOffset() * -1)
-      return date;
-    },
-    startOfWeek: function startOfWeek(input) {
-      var date = new Date(input);
-      if (date.getDay()) {
-        date.setHours(-Math.abs(date.getDay() - 1) * 24, 0, 0, 0);
-      } else {
-        date.setHours(-6 * 24, 0, 0, 0);
-      }
-      date.setMinutes(date.getTimezoneOffset() * -1)
-      return date;
-    },
-    startOfMonth: function startOfMonth(input) {
-      var date = new Date(input);
-      if (date.getDate()) {
-        date.setHours(-Math.abs(date.getDate() - 1) * 24, 0, 0, 0);
-      } else {
-        date.setHours(0, 0, 0, 0);
-      }
-      date.setMinutes(date.getTimezoneOffset() * -1)
-      return date;
-    },
-    startOfYear: function startOfYear(input) {
-      var date = new Date(input);
-      date.setMonth(0, 1);
-      date.setHours(0, 0, 0, 0);
-      date.setMinutes(date.getTimezoneOffset() * -1)
-      return date;
-    },
-    dayOfYear: function getDayOfYear(input) {
-      var date = new Date(input);
-      var dayCount = [
-        0,
-        31,
-        59,
-        90,
-        120,
-        151,
-        181,
-        212,
-        243,
-        273,
-        304,
-        334
-      ];
-      var month = date.getMonth();
-      var day = date.getDate();
-      var dayOfYear = dayCount[month] + day;
-      if (month > 1 && this.isLeapYear())
-        dayOfYear++;
-      date.setMinutes(date.getTimezoneOffset())
-      return dayOfYear;
-    },
     isLeapYear: function isLeapYear(input) {
       var date = new Date(input);
       var year = date.getFullYear();

@@ -108,138 +108,14 @@ hdate.relativeTime(new Date("8-16-1987"), {returnObject: true})
 ##### Examples:
 
 ```js
-hdate.getHumanMonth(8)
+hdate.monthName(8)
 // August
 
-hdate.getHumanMonth("8-16-1987")
+hdate.monthName("8-16-1987")
 // August
 
-hdate.getHumanMonth(new Date("8-16-1987"))
+hdate.monthName(new Date("8-16-1987"))
 // August
-```
-
-#### .startOfDay(datestring or jsdate or epochtime)
-
-##### Arguments: 
-
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
-- __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
-- __epochtime `integer`__ milliseconds from the epoch (Eg. `1416283449392`)
-
-##### Returns:
-
-- __`object`__ Native Date object set to the beginning of the given day
-
-##### Examples:
-
-```js
-hdate.startOfDay("8-16-1987")
-// Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
-
-hdate.startOfDay(new Date("8-16-1987"))
-// Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
-
-hdate.startOfDay(1416583449392)
-// Fri Nov 21 2014 00:00:00 GMT-0800
-```
-
-#### .startOfWeek(datestring or jsdate or epochtime)
-
-##### Arguments: 
-
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
-- __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
-- __epochtime `integer`__ milliseconds from the epoch (Eg. `1416283449392`)
-
-##### Returns:
-
-- __`object`__ Native Date object set to the beginning of the given week
-
-##### Examples:
-
-```js
-hdate.startOfWeek("8-16-1987")
-// Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
-
-hdate.startOfWeek(new Date("8-16-1987"))
-// Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
-
-hdate.startOfWeek(1416283449392)
-// Mon Nov 17 2014 00:00:00 GMT-0800 (PST)
-```
-
-#### .startOfMonth(datestring or jsdate or epochtime)
-
-##### Arguments: 
-
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
-- __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
-- __epochtime `integer`__ milliseconds from the epoch (Eg. `1416283449392`)
-
-##### Returns:
-
-- __`object`__ Native Date object set to the beginning of the given month
-
-##### Examples:
-
-```js
-hdate.startOfMonth(new Date("8-16-1987"))
-// Sat Aug 01 1987 00:00:00 GMT-0700 (PDT)
-
-hdate.startOfMonth("8-16-1987")
-// Sat Aug 01 1987 00:00:00 GMT-0700 (PDT)
-
-hdate.startOfMonth(1416283449392)
-// Sat Nov 01 2014 00:00:00 GMT-0700 (PDT)
-```
-#### .startOfYear(datestring or jsdate or epochtime)
-
-##### Arguments: 
-
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
-- __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
-- __epochtime `integer`__ milliseconds from the epoch (Eg. `1416283449392`)
-
-##### Returns:
-
-- __`object`__ Native Date object set to the beginning of the given year
-
-##### Examples:
-
-```js
-hdate.startOfYear(new Date("8-16-1987"))
-// Thu Jan 01 1987 00:00:00 GMT-0800 (PST)
-
-hdate.startOfYear("8-16-1987")
-// Thu Jan 01 1987 00:00:00 GMT-0800 (PST)
-
-hdate.startOfYear(1416283449392)
-// Wed Jan 01 2014 00:00:00 GMT-0800 (PST)
-```
-
-#### .dayOfYear(datestring or jsdate or epochtime)
-
-##### Arguments: 
-
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
-- __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
-- __epochtime `integer`__ milliseconds from the epoch (Eg. `1416283449392`)
-
-##### Returns:
-
-- __`integer`__: the day of the year starting from 1
-
-##### Examples:
-
-```js
-hdate.dayOfYear("1/1/1987")
-// 1
-
-hdate.dayOfYear(new Date("8/16/1987"))
-// 229
-
-hdate.dayOfYear(1416283449392)
-// 322
 ```
 
 #### .isLeapYear(datestring or jsdate or epochtime)

@@ -68,65 +68,6 @@ describe('monthName', function(){
   })
 })
 
-describe('startOf', function(){
-  describe('day', function(){
-    it('should work with a string', function(){
-      assert.equal(hdate.startOfDay("8/16/1987 07:59:25").toUTCString(), "Sun, 16 Aug 1987 00:00:00 GMT")
-    })
-    it('should work with a date object', function(){
-      assert.equal(hdate.startOfDay(new Date(1416283449392)).toUTCString(), "Mon, 17 Nov 2014 00:00:00 GMT")
-    })
-    it('should work with an integer', function(){
-      assert.equal(hdate.startOfDay(1416283449392).toUTCString(), "Mon, 17 Nov 2014 00:00:00 GMT")
-    })
-  })
-  describe('week', function(){
-    it('should work with a string', function(){
-      assert.equal(hdate.startOfWeek("8/16/1987 07:59:25").toUTCString(), "Mon, 10 Aug 1987 00:00:00 GMT")
-    })
-    it('should work with a date object', function(){
-      assert.equal(hdate.startOfWeek(new Date(1416283449392)).toUTCString(), "Mon, 17 Nov 2014 00:00:00 GMT")
-    })
-    it('should work with an integer', function(){
-      assert.equal(hdate.startOfWeek(1416283449392).toUTCString(), "Mon, 17 Nov 2014 00:00:00 GMT")
-    })
-  })
-  describe('month', function(){
-    it('should work with a string', function(){
-      assert.equal(hdate.startOfMonth("8/16/1987 07:59:25").toUTCString(), "Sat, 01 Aug 1987 00:00:00 GMT")
-    })
-    it('should work with a date object', function(){
-      assert.equal(hdate.startOfMonth(new Date(1416283449392)).toUTCString(), "Sat, 01 Nov 2014 00:00:00 GMT")
-    })
-    it('should work with an integer', function(){
-      assert.equal(hdate.startOfMonth(1416283449392).toUTCString(), "Sat, 01 Nov 2014 00:00:00 GMT")
-    })
-  })
-  describe('year', function(){
-    it('should work with a string', function(){
-      assert.equal(hdate.startOfYear("8/16/1987 07:59:25").toUTCString(), "Thu, 01 Jan 1987 00:00:00 GMT")
-    })
-    it('should work with a date object', function(){
-      assert.equal(hdate.startOfYear(new Date(1416283449392)).toUTCString(), "Wed, 01 Jan 2014 00:00:00 GMT")
-    })
-    it('should work with an integer', function(){
-      assert.equal(hdate.startOfYear(1416283449392).toUTCString(), "Wed, 01 Jan 2014 00:00:00 GMT")
-    })
-  })
-})
-
-describe('dayOfYear', function(){
-  it('should work with a string', function(){
-    assert.equal(hdate.dayOfYear("1/1/1987"), 1)
-  })
-  it('should work with a date object', function(){
-    assert.equal(hdate.dayOfYear(new Date("8/16/1987")), 229)
-  })
-  it('should work with an integer', function(){
-    assert.equal(hdate.dayOfYear(1416283449392), 322)
-  })
-})
-
 describe('isLeapYear', function(){
   describe('true', function(){
     it('should work with a string', function(){

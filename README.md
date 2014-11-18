@@ -64,7 +64,7 @@ hdate.getHumanDate(-6400)
 
 Depending on the option `returnObject` you will get a string or an object:
 
-- __default `string`__ `"27 years 96 days 21 hours 47 minutes 2 seconds ago"`
+- __`string`__ `"27 years 96 days 21 hours 47 minutes 2 seconds ago"` __default__
 - __`object`__ `{ seconds: 31, hours: 4, days: 101, years: 27, past: true }`
 
 __examples__:

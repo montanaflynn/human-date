@@ -1,21 +1,14 @@
 {
   "name": "human-date",
   "version": "1.1.1",
+  "author": "Montana Flynn (http://anonfunction.com/)",
   "description": "Return dates and times in easily readable formats",
+  "license": "MIT",
   "main": "humandate.js",
+  "homepage": "https://github.com/montanaflynn/human-date",
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/.bin/mocha"
   },
-  "author": "Montana Flynn",
-  "license": "ISC",
-  "keywords": [
-    "date",
-    "time",
-    "human",
-    "humanize",
-    "relative",
-    "readable"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/montanaflynn/human-date.git"
@@ -23,12 +16,20 @@
   "bugs": {
     "url": "https://github.com/montanaflynn/human-date/issues"
   },
-  "homepage": "https://github.com/montanaflynn/human-date",
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-jshint": "^1.9.0",
+    "gulp-mocha": "^2.0.0",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^1.0.1",
     "mocha": "^2.0.1"
-  }
+  },
+  "keywords": [
+    "date",
+    "time",
+    "human",
+    "humanize",
+    "relative",
+    "readable"
+  ]
 }

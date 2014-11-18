@@ -10,35 +10,40 @@ Making dates and times readable for humans. Plus a bunch of other goodies.
 
 `.getHumanDate(arg)`
 
-- _arg_ can be a date object or string that parses into a date object.
+- __arg__ date | date string
 
-`.getHumanTime(arg)`
+`.getHumanTime(arg, options)`
 
-- _arg_ can be an integer representing seconds or a date string / object. Positive numbers represent the future and negative the past.
+- __arg__ date | date string | integer representing seconds in the future or past 
+
+- _options_ object with the following keys:
+    - _futureSuffix_ string (default: "from now") 
+    - _pastSuffix_ string (default: "ago") 
+    - _returnObject_ bool (default: false) 
 
 `.getHumanMonth(arg)`
 
-- _arg_ can be an integer representing the month or a date string / object. Month number is not 0 indexed, for instance 1 represents January.
+- __arg__ date | date string | integer representing month number, not 0 indexed 
 
 `.getStartOfDay(arg)`
 
-- _arg_ can be a date object or string that parses into a date object.
+- __arg__ date | date string
 
 `.getStartOfWeek(arg)`
 
-- _arg_ can be a date object or string that parses into a date object.
+- __arg__ date | date string
 
 `.getStartOfMonth(arg)`
 
-- _arg_ can be a date object or string that parses into a date object.
+- __arg__ date | date string
 
 `.getStartOfYear(arg)`
 
-- _arg_ can be a date object or string that parses into a date object.
+- __arg__ date | date string
 
 `.isLeapYear(arg)`
 
-- _arg_ can be a date object or string that parses into a date object.
+- __arg__ date | date string
 
 ### Example Usage
 
@@ -72,6 +77,14 @@ hdate.getHumanTime("8-16-2020")
 
 hdate.getHumanTime(new Date("8-16-1987"))
 // 27 years 96 days 21 hours 47 minutes 2 seconds ago
+
+hdate.getHumanTime(new Date("8-16-1987"), {returnObject: true})
+// { seconds: 31,
+//  minutes: 5,
+//  hours: 4,
+//  days: 101,
+//  years: 27,
+//  past: true }
 ```
 
 #### getHumanMonth 

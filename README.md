@@ -2,96 +2,94 @@
 
 Making dates and times readable for humans. Plus a bunch of other goodies.
 
-### Install
+### Quick Start
 
-`npm install human-date --save`
+```shell
+# Install and save dependency in package.json
+npm install human-date --save
+```
+
+```js
+// Include as a short name for ease-of-use
+var hdate = require('human-date')
+```
 
 ### Methods
 
-`.getHumanDate(arg)`
+#### `.getHumanDate(jsdate or datestring)`
 
-- __arg__ date | date string
+__arguments__: 
 
-`.getHumanTime(arg, options)`
+- __jsdate__: a javascript date object (example: `new Date("8/16/1987")`)
+- __datestring__: anything that can be parsed as a date (example: `"8/16/1987"`)
 
-- __arg__ date | date string | integer representing seconds in the future or past 
+__returns__: 
 
-- _options_ object with the following keys:
-    - _futureSuffix_ string (default: "from now") 
-    - _pastSuffix_ string (default: "ago") 
-    - _returnObject_ bool (default: false) 
+- __string__: representing the date. (example: `"August 16th, 1987"`)
 
-`.getHumanMonth(arg)`
-
-- __arg__ date | date string | integer representing month number, not 0 indexed 
-
-`.getStartOfDay(arg)`
-
-- __arg__ date | date string
-
-`.getStartOfWeek(arg)`
-
-- __arg__ date | date string
-
-`.getStartOfMonth(arg)`
-
-- __arg__ date | date string
-
-`.getStartOfYear(arg)`
-
-- __arg__ date | date string
-
-`.isLeapYear(arg)`
-
-- __arg__ date | date string
-
-### Example Usage
-
-#### getHumanDate 
+__examples__:
 
 ```js
-var hdate = require('human-date')
+hdate.getHumanDate(new Date('8-16-1987'))
+// August 16th, 1987
 
 hdate.getHumanDate('8-16-1987')
 // August 16th, 1987
-
-hdate.getHumanDate(new Date('8-16-1987'))
-// August 16th, 1987
 ```
-#### getHumanTime 
+
+#### `.getHumanTime(jsdate or datestring or numseconds, [object])`
+
+__arguments__: 
+
+- __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+- __numseconds__: (`integer`) number of seconds to or from the current time (example: `-32`)
+- __object__: options object with the following keys
+    - __futureSuffix__: (`string`) default: `"from now"`
+    - __pastSuffix__: (`string`) default: `"from now"`
+    - __returnObject__: (`boolean`) default: `false`
+
+__returns__: 
+
+Depending on the option `returnObject` a:
+
+- __string__: `"August 16th, 1987"` (Default)
+- __object__: `{ seconds: 31, minutes: 5, hours: 4, days: 101, years: 27, past: true }`
+
+__examples__:
 
 ```js
-var hdate = require('human-date')
-
 hdate.getHumanTime(4)
 // 4 seconds from now
 
-hdate.getHumanTime(-4)
-// 4 seconds ago
+hdate.getHumanTime(4, {futureSuffix: "in the future"})
+// 4 seconds in the future
 
 hdate.getHumanTime("8-16-1987")
 // 27 years 96 days 21 hours 47 minutes 2 seconds ago
-
-hdate.getHumanTime("8-16-2020")
-// 5 years 277 days 1 hours 41 minutes 43 seconds from now
 
 hdate.getHumanTime(new Date("8-16-1987"))
 // 27 years 96 days 21 hours 47 minutes 2 seconds ago
 
 hdate.getHumanTime(new Date("8-16-1987"), {returnObject: true})
-// { seconds: 31,
-//  minutes: 5,
-//  hours: 4,
-//  days: 101,
-//  years: 27,
-//  past: true }
+// { seconds: 31, minutes: 5, hours: 4, days: 101, years: 27, past: true }
 ```
 
-#### getHumanMonth 
+#### `.getHumanMonth(jsdate or datestring or monthnum)`
+
+__arguments__: 
+
+- __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+- __monthnum__: (`integer`) the month number, not 0-indexed (example: `12`)
+
+__returns__: 
+
+- __string__: `"December"`
+
+__examples__:
 
 ```js
-var hdate = require('human-date')
-
 hdate.getHumanMonth(8)
 // August
 
@@ -102,29 +100,96 @@ hdate.getHumanMonth(new Date("8-16-1987"))
 // August
 ```
 
-#### getStartOf* 
+#### `.getStartOfDay(jsdate or datestring)`
+
+__arguments__: 
+
+- __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+
+__returns__: 
+
+- __object__: Native Date object set to the beginning of the given day
+
+__examples__:
 
 ```js
-var hdate = require('human-date')
-
 hdate.getStartOfDay(1416283449392)
 // Mon Nov 17 2014 00:00:00 GMT-0800 (PST)
+```
 
+#### `.getStartOfWeek(jsdate or datestring)`
+
+__arguments__: 
+
+- __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+
+__returns__: 
+
+- __object__: Native Date object set to the beginning of the given week
+
+__examples__:
+
+```js
 hdate.getStartOfWeek("8-16-1987")
 // Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
+```
 
+#### `.getStartOfMonth(jsdate or datestring)`
+
+__arguments__: 
+
+- __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+
+__returns__: 
+
+- __object__: Native Date object set to the beginning of the given month
+
+__examples__:
+
+```js
 hdate.getStartOfMonth("8-16-1987")
 // Sat Aug 01 1987 00:00:00 GMT-0700 (PDT)
+```
 
+#### `.getStartOfYear(jsdate or datestring)`
+
+__arguments__: 
+
+- __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+
+__returns__: 
+
+- __object__: Native Date object set to the beginning of the given year
+
+__examples__:
+
+```js
 hdate.getStartOfYear("8-16-1987")
 // Thu Jan 01 1987 00:00:00 GMT-0800 (PST)
 ```
 
-#### isLeapYear 
+`.isLeapYear(arg)`
+
+- __arg__ date | date string
+
+#### `.isLeapYear(jsdate or datestring)`
+
+__arguments__: 
+
+- __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+
+__returns__: 
+
+- __boolean__: wether or not the given date is in a leap year
+
+__examples__:
 
 ```js
-var hdate = require('human-date')
-
 hdate.isLeapYear("8/16/1987")
 // false
 

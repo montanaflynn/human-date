@@ -23,12 +23,13 @@ hdate.getHumanTime("8/16/2015")
 
 ### Methods
 
-#### .getHumanDate(jsdate or datestring)
+#### .getHumanDate(jsdate or datestring or numseconds)
 
 __arguments__: 
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
 - __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
+- __numseconds__: (`integer`) number of seconds to or from the current time (example: `-32`)
 
 __returns__: 
 
@@ -37,11 +38,14 @@ __returns__:
 __examples__:
 
 ```js
+hdate.getHumanDate('8-16-1987')
+// August 16th, 1987
+
 hdate.getHumanDate(new Date('8-16-1987'))
 // August 16th, 1987
 
-hdate.getHumanDate('8-16-1987')
-// August 16th, 1987
+hdate.getHumanDate(-6400)
+// November 17th, 2014
 ```
 
 #### .getHumanTime(jsdate or datestring or numseconds, [options])
@@ -60,8 +64,8 @@ __returns__:
 
 Depending on the option `returnObject` you will get a string or an object:
 
-- __Default__: (`string`) `"August 16th, 1987"` _Default_
-- __Object__: (`object`) `{ seconds: 31, minutes: 5, hours: 4, days: 101, years: 27, past: true }`
+- __Default__: (`string`) `"August 16th, 1987"`
+- __Object__: (`object`) `{ seconds: 31, hours: 4, days: 101, years: 27, past: true }`
 
 __examples__:
 
@@ -113,6 +117,7 @@ __arguments__:
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
 - __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
+- __epochtime__: (`integer`) number of seconds from the current time (example: `1416283449392`)
 
 __returns__: 
 
@@ -121,8 +126,14 @@ __returns__:
 __examples__:
 
 ```js
-hdate.getStartOfDay(1416283449392)
-// Mon Nov 17 2014 00:00:00 GMT-0800 (PST)
+hdate.getStartOfDay("8-16-1987")
+// Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
+
+hdate.getStartOfDay(new Date("8-16-1987"))
+// Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
+
+hdate.getStartOfDay(1416583449392)
+// Fri Nov 21 2014 00:00:00 GMT-0800
 ```
 
 #### .getStartOfWeek(jsdate or datestring)
@@ -131,6 +142,7 @@ __arguments__:
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
 - __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
+- __epochtime__: (`integer`) number of seconds from the current time (example: `1416283449392`)
 
 __returns__: 
 
@@ -141,6 +153,12 @@ __examples__:
 ```js
 hdate.getStartOfWeek("8-16-1987")
 // Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
+
+hdate.getStartOfWeek(new Date("8-16-1987"))
+// Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
+
+hdate.getStartOfWeek(1416283449392)
+// Mon Nov 17 2014 00:00:00 GMT-0800 (PST)
 ```
 
 #### .getStartOfMonth(jsdate or datestring)
@@ -149,6 +167,7 @@ __arguments__:
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
 - __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
+- __epochtime__: (`integer`) number of seconds from the current time (example: `1416283449392`)
 
 __returns__: 
 
@@ -157,16 +176,22 @@ __returns__:
 __examples__:
 
 ```js
+hdate.getStartOfMonth(new Date("8-16-1987"))
+// Sat Aug 01 1987 00:00:00 GMT-0700 (PDT)
+
 hdate.getStartOfMonth("8-16-1987")
 // Sat Aug 01 1987 00:00:00 GMT-0700 (PDT)
-```
 
+hdate.getStartOfMonth(1416283449392)
+// Sat Nov 01 2014 00:00:00 GMT-0700 (PDT)
+```
 #### .getStartOfYear(jsdate or datestring)
 
 __arguments__: 
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
 - __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
+- __epochtime__: (`integer`) number of seconds from the current time (example: `1416283449392`)
 
 __returns__: 
 
@@ -175,8 +200,14 @@ __returns__:
 __examples__:
 
 ```js
+hdate.getStartOfYear(new Date("8-16-1987"))
+// Thu Jan 01 1987 00:00:00 GMT-0800 (PST)
+
 hdate.getStartOfYear("8-16-1987")
 // Thu Jan 01 1987 00:00:00 GMT-0800 (PST)
+
+hdate.getStartOfYear(1416283449392)
+// Wed Jan 01 2014 00:00:00 GMT-0800 (PST)
 ```
 
 #### .isLeapYear(jsdate or datestring)
@@ -185,6 +216,7 @@ __arguments__:
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
 - __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
+- __epochtime__: (`integer`) number of seconds from the current time (example: `1416283449392`)
 
 __returns__: 
 
@@ -198,6 +230,9 @@ hdate.isLeapYear("8/16/1987")
 
 hdate.isLeapYear("8/16/1988")
 // true
+
+hdate.isLeapYear(1416283449392)
+// false
 ```
 
 ### Todos

@@ -1,6 +1,6 @@
 # human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg?style=flat-square)](https://www.npmjs.org/package/human-date) [![TravisCI Build Status](http://img.shields.io/travis/montanaflynn/human-date.svg?style=flat-square)](https://travis-ci.org/montanaflynn/human-date)
 
-Making dates and times readable for humans. Plus a bunch of other date related goodies.
+Making dates and times readable for humans. 
 
 ### Quick Start
 
@@ -116,31 +116,6 @@ hdate.monthName("8-16-1987")
 
 hdate.monthName(new Date("8-16-1987"))
 // August
-```
-
-#### .isLeapYear(datestring or jsdate or epochtime)
-
-##### Arguments: 
-
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
-- __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
-- __epochtime `integer`__ milliseconds from the epoch (Eg. `1416283449392`)
-
-##### Returns:
-
-- __`boolean`__: wether or not the given date is in a leap year
-
-##### Examples:
-
-```js
-hdate.isLeapYear("8/16/1987")
-// false
-
-hdate.isLeapYear(new Date("8/16/1988"))
-// true
-
-hdate.isLeapYear(1416283449392)
-// false
 ```
 
 ### Todos

@@ -67,28 +67,3 @@ describe('monthName', function(){
     assert.equal(hdate.monthName(new Date("7-4-2012")), "July")
   })
 })
-
-describe('isLeapYear', function(){
-  describe('true', function(){
-    it('should work with a string', function(){
-      assert.equal(hdate.isLeapYear("8/16/1987"), false)
-    })
-    it('should work with a date object', function(){
-      assert.equal(hdate.isLeapYear(new Date("8/16/1987")), false)
-    })
-    it('should work with an integer', function(){
-      assert.equal(hdate.isLeapYear(1416326995059), false)
-    })
-  })
-  describe('false', function(){
-    it('should work with a string', function(){
-      assert.equal(hdate.isLeapYear("8/16/1988"), true)
-    })
-    it('should work with a date object', function(){
-      assert.equal(hdate.isLeapYear(new Date("8/16/1988")), true)
-    })
-    it('should work with an integer', function(){
-      assert.equal(hdate.isLeapYear(587718123456), true)
-    })
-  })
-})

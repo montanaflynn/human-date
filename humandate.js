@@ -94,13 +94,6 @@
       }
       var year = date.getFullYear();
       return monthName + ' ' + humanDate + ', ' + year;
-    },
-    isLeapYear: function isLeapYear(input) {
-      var date = new Date(input);
-      var year = date.getFullYear();
-      if ((year & 3) !== 0)
-        return false;
-      return year % 100 !== 0 || year % 400 === 0;
     }
   };
   if (typeof module !== 'undefined' && module.exports) {

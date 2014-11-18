@@ -71,9 +71,15 @@
       return output.join(', ') + " " + strSuffix
     },
     getHumanDate: function getHumanDate(input) {
-      var input = new Date(input)
-      var monthName = this.getHumanMonth(input.getMonth() + 1)
-      var day = input.getDate()
+      if (!input) {
+        input = new Date()
+      } else if (typeof input === 'number') {
+        input = new Date().setSeconds(input)
+      }
+
+      var date = new Date(input)
+      var monthName = this.getHumanMonth(date.getMonth() + 1)
+      var day = date.getDate()
       var humanDate
 
       if (day > 3 && day < 21) {
@@ -95,7 +101,7 @@
         }  
       }
      
-      var year = input.getFullYear()
+      var year = date.getFullYear()
       return monthName + " " + humanDate + ", " + year
     },
     getStartOfDay: function getStartOfDay(input) {

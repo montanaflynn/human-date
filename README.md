@@ -1,63 +1,133 @@
 # human-date
 
-Making dates and times readable for humans. Forks and pull requests most welcomed.
+Making dates and times readable for humans. Plus a bunch of other goodies.
 
 ### Install
 
 `npm install human-date --save`
 
-### Usage
+### Methods
 
-`hdate.date(arg)`
+`.getHumanDate(arg)`
 
 - _arg_ can be a date object or string that parses into a date object.
 
-`hdate.time(arg)`
+`.getHumanTime(arg)`
 
 - _arg_ can be an integer representing seconds or a date string / object. Positive numbers represent the future and negative the past.
 
-`hdate.month(arg)`
+`.getHumanMonth(arg)`
 
 - _arg_ can be an integer representing the month or a date string / object. Month number is not 0 indexed, for instance 1 represents January.
 
-### Example
+`.getStartOfDay(arg)`
+
+- _arg_ can be a date object or string that parses into a date object.
+
+`.getStartOfWeek(arg)`
+
+- _arg_ can be a date object or string that parses into a date object.
+
+`.getStartOfMonth(arg)`
+
+- _arg_ can be a date object or string that parses into a date object.
+
+`.getStartOfYear(arg)`
+
+- _arg_ can be a date object or string that parses into a date object.
+
+`.isLeapYear(arg)`
+
+- _arg_ can be a date object or string that parses into a date object.
+
+### Example Usage
+
+#### getHumanDate 
 
 ```js
 var hdate = require('human-date')
 
-hdate.date('8-16-1987')
+hdate.getHumanDate('8-16-1987')
 // August 16th, 1987
 
-hdate.date(new Date('8-16-1987'))
+hdate.getHumanDate(new Date('8-16-1987'))
 // August 16th, 1987
+```
+#### getHumanTime 
 
-hdate.time(4)
+```js
+var hdate = require('human-date')
+
+hdate.getHumanTime(4)
 // 4 seconds from now
 
-hdate.time(-4)
+hdate.getHumanTime(-4)
 // 4 seconds ago
 
-hdate.time("8-16-1987")
+hdate.getHumanTime("8-16-1987")
 // 27 years 96 days 21 hours 47 minutes 2 seconds ago
 
-hdate.time("8-16-2020")
+hdate.getHumanTime("8-16-2020")
 // 5 years 277 days 1 hours 41 minutes 43 seconds from now
 
-hdate.time(new Date("8-16-1987"))
+hdate.getHumanTime(new Date("8-16-1987"))
 // 27 years 96 days 21 hours 47 minutes 2 seconds ago
+```
 
-hdate.month(8)
+#### getHumanMonth 
+
+```js
+var hdate = require('human-date')
+
+hdate.getHumanMonth(8)
 // August
 
-hdate.month("8-16-1987")
+hdate.getHumanMonth("8-16-1987")
 // August
 
-hdate.month(new Date("8-16-1987"))
+hdate.getHumanMonth(new Date("8-16-1987"))
 // August
+```
+
+#### getStartOf* 
+
+```js
+var hdate = require('human-date')
+
+hdate.getStartOfDay(1416283449392)
+// Mon Nov 17 2014 00:00:00 GMT-0800 (PST)
+
+hdate.getStartOfWeek("8-16-1987")
+// Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
+
+hdate.getStartOfMonth("8-16-1987")
+// Sat Aug 01 1987 00:00:00 GMT-0700 (PDT)
+
+hdate.getStartOfYear("8-16-1987")
+// Thu Jan 01 1987 00:00:00 GMT-0800 (PST)
+```
+
+#### isLeapYear 
+
+```js
+var hdate = require('human-date')
+
+hdate.isLeapYear("8/16/1987")
+// false
+
+hdate.isLeapYear("8/16/1988")
+// true
 ```
 
 ### Todos
 
-- Add various options.
+- Add various options and helpers (prefixes, suffixes, etc...)
+- Add time information to getHumanDate (August 16th, 2014 at 5:00pm PST)
 - Support different locales.
 - Proper testing framework.
+
+### Contributing
+
+__Forks and pull requests are most welcomed.__
+
+Please add any methods to test.js and run npm test to make sure nothing has broken before submitting a pull request. 

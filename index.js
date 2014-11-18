@@ -35,7 +35,7 @@
       var suffix = seconds < 0 ? "ago" : "from now"
       seconds = Math.abs(seconds)
 
-      var times = {
+      var t = {
         seconds: Math.floor((((seconds % 31536000) % 86400) % 3600) % 60),
         minutes:  Math.floor((((seconds % 31536000) % 86400) % 3600) / 60),
         hours: Math.floor(((seconds % 31536000) % 86400) / 3600),
@@ -44,14 +44,13 @@
         suffix: suffix
       }
 
-      var output = times.years ? times.years + " years " : ""
-      output += times.days ? times.days + " days " : ""
-      output += times.hours ? times.hours + " hours " : ""
-      output += times.minutes ? times.minutes + " minutes " : ""
-      output += times.seconds ? times.seconds.toFixed() + " seconds " : ""
-      output += times.suffix
-
-      return output
+      var o = []
+      if (t.years) t.years > 1 ? o.push(t.years + " years") : o.push(t.years + " year")
+      if (t.days) t.days > 1 ? o.push(t.days + " days") : o.push(t.days + " day")
+      if (t.hours) t.hours > 1 ? o.push(t.hours + " hours") : o.push(t.hours + " hour")
+      if (t.minutes) t.minutes > 1 ? o.push(t.minutes + " minutes") : o.push(t.minutes + " minute")
+      if (t.seconds) t.seconds > 1 ? o.push(t.seconds + " seconds") : o.push(t.seconds + " second")
+      return o.join(', ') + " " + t.suffix
     },
     getHumanDate: function getHumanDate(input) {
       var input = new Date(input)

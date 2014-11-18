@@ -18,6 +18,7 @@ assert("testing time in future with date object", typeof hdate.getHumanTime(new 
 assert("testing time in past with date object", typeof hdate.getHumanTime(new Date("8-16-1987")), 'string')
 assert("testing time with optional future suffix", hdate.getHumanTime(4, {futureSuffix: "in the future"}), "4 seconds in the future")
 assert("testing time with optional past suffix", hdate.getHumanTime(-4, {pastSuffix: "in the past"}), "4 seconds in the past")
+assert("testing time returning as object", typeof hdate.getHumanTime(-4, {returnObject: true}), "object")
 
 // Test date
 assert("testing date in future with date string", hdate.getHumanDate("8-16-2020"), "August 16th, 2020")

@@ -35,8 +35,9 @@
       if (!options) options = {}
       if (!options.futureSuffix) options.futureSuffix = "from now"
       if (!options.pastSuffix) options.pastSuffix = "ago"
+      if (!options.returnObject) options.returnObject = false
 
-      var suffix = seconds < 0 ? options.pastSuffix : options.futureSuffix
+      var isPast = seconds < 0 ? true : false
       seconds = Math.abs(seconds)
 
       var t = {
@@ -45,8 +46,11 @@
         hours: Math.floor(((seconds % 31536000) % 86400) / 3600),
         days: Math.floor((seconds % 31536000) / 86400),
         years: Math.floor(seconds / 31536000),
-        suffix: suffix
+        past: isPast
       }
+
+      if (options.returnObject) return t
+      var strSuffix = t.past ? options.pastSuffix : options.futureSuffix
 
       var a = []
       if (t.years) t.years > 1 ? a.push(t.years + " years") : a.push(t.years + " year")
@@ -54,8 +58,7 @@
       if (t.hours) t.hours > 1 ? a.push(t.hours + " hours") : a.push(t.hours + " hour")
       if (t.minutes) t.minutes > 1 ? a.push(t.minutes + " minutes") : a.push(t.minutes + " minute")
       if (t.seconds) t.seconds > 1 ? a.push(t.seconds + " seconds") : a.push(t.seconds + " second")
-
-      return a.join(', ') + " " + t.suffix
+      return a.join(', ') + " " + strSuffix
     },
     getHumanDate: function getHumanDate(input) {
       var input = new Date(input)

@@ -1,4 +1,4 @@
-# human-date
+# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg?style=flat-square)](https://www.npmjs.org/package/human-date)
 
 Making dates and times readable for humans. Plus a bunch of other date related goodies.
 

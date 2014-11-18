@@ -2,7 +2,7 @@
 
 Making dates and times readable for humans. Plus a bunch of other date related goodies.
 
-## ToC
+<img height="256" width="256" src="https://i.imgur.com/jQJgw4n.png" style="position: absolute; top: 210px; right: 150px;">
 
 - [Quick Start](https://github.com/montanaflynn/human-date#quick-start)
 - [Methods](https://github.com/montanaflynn/human-date#methods)
@@ -19,9 +19,13 @@ Making dates and times readable for humans. Plus a bunch of other date related g
 
 ### Quick Start
 
+##### Install:
+
 ```shell
 npm install human-date --save
 ```
+
+##### Usage:
 
 ```js
 var hdate = require('human-date')

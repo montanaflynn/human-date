@@ -98,6 +98,7 @@
     startOfDay: function startOfDay(input) {
       var date = new Date(input);
       date.setHours(0, 0, 0, 0);
+      date.setMinutes(date.getTimezoneOffset() * -1)
       return date;
     },
     startOfWeek: function startOfWeek(input) {
@@ -107,6 +108,7 @@
       } else {
         date.setHours(-6 * 24, 0, 0, 0);
       }
+      date.setMinutes(date.getTimezoneOffset() * -1)
       return date;
     },
     startOfMonth: function startOfMonth(input) {
@@ -116,12 +118,14 @@
       } else {
         date.setHours(0, 0, 0, 0);
       }
+      date.setMinutes(date.getTimezoneOffset() * -1)
       return date;
     },
     startOfYear: function startOfYear(input) {
       var date = new Date(input);
       date.setMonth(0, 1);
       date.setHours(0, 0, 0, 0);
+      date.setMinutes(date.getTimezoneOffset() * -1)
       return date;
     },
     dayOfYear: function getDayOfYear(input) {
@@ -145,6 +149,7 @@
       var dayOfYear = dayCount[month] + day;
       if (month > 1 && this.isLeapYear())
         dayOfYear++;
+      date.setMinutes(date.getTimezoneOffset())
       return dayOfYear;
     },
     isLeapYear: function isLeapYear(input) {

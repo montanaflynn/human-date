@@ -27,13 +27,13 @@ hdate.getHumanTime("8/16/2015")
 
 ##### Arguments: 
 
-- __jsdate (`object`)__ a javascript date object (`new Date("8/16/1987")`)
-- __datestring (`string`)__ anything that can be parsed as a date (`"8/16/1987"`) 
-- __numseconds (`integer`)__ number of seconds to or from the current time (`-32`)
+- __jsdate `object`__ a javascript date object (Eg. `new Date("8/16/1987")`)
+- __datestring `string`__ anything that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __numseconds `integer`__ number of seconds to or from the current time (Eg. `-32`)
 
 ##### Returns:
 
-- __(`string`)__ representing the date. (`"August 16th, 1987"`)
+- __`string`__ representing the date. (Eg. `"August 16th, 1987"`)
 
 __examples__:
 
@@ -52,20 +52,20 @@ hdate.getHumanDate(-6400)
 
 ##### Arguments: 
 
-- __jsdate (`object`)__ a javascript date object (`new Date("8/16/1987")`)
-- __datestring (`string`)__ anything that can be parsed as a date (`"8/16/1987"`) 
-- __numseconds (`integer`)__ number of seconds to or from the current time (`-32`)
+- __jsdate `object`__ a javascript date object (Eg. `new Date("8/16/1987")`)
+- __datestring `string`__ anything that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __numseconds `integer`__ number of seconds to or from the current time (Eg. `-32`)
 - __options__: object with the following keys
-    - __futureSuffix (`string`)__ default: `"from now"`
-    - __pastSuffix (`string`)__ default: `"from now"`
-    - __returnObject (`boolean`)__: default: `false`
+    - __futureSuffix `string`__ default: `"from now"`
+    - __pastSuffix `string`__ default: `"from now"`
+    - __returnObject `boolean`__: default: `false`
 
 ##### Returns:
 
 Depending on the option `returnObject` you will get a string or an object:
 
-- __default (`string`)__ `"27 years 96 days 21 hours 47 minutes 2 seconds ago"`
-- __(`object`)__ `{ seconds: 31, hours: 4, days: 101, years: 27, past: true }`
+- __default `string`__ `"27 years 96 days 21 hours 47 minutes 2 seconds ago"`
+- __`object`__ `{ seconds: 31, hours: 4, days: 101, years: 27, past: true }`
 
 __examples__:
 
@@ -90,13 +90,13 @@ hdate.getHumanTime(new Date("8-16-1987"), {returnObject: true})
 
 ##### Arguments: 
 
-- __jsdate (`object`)__ a javascript date object (`new Date("8/16/1987")`)
-- __datestring (`string`)__ anything that can be parsed as a date (`"8/16/1987"`) 
-- __monthnum (`integer`)__ the month number, not 0-indexed (`12`)
+- __jsdate `object`__ a javascript date object (Eg. `new Date("8/16/1987")`)
+- __datestring `string`__ anything that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __monthnum `integer`__ the month number, not 0-indexed (Eg. `12`)
 
 ##### Returns:
 
-- __(`string`)__
+- __`string`__
 
 __examples__:
 
@@ -115,13 +115,13 @@ hdate.getHumanMonth(new Date("8-16-1987"))
 
 ##### Arguments: 
 
-- __jsdate (`object`)__ a javascript date object (`new Date("8/16/1987")`)
-- __datestring (`string`)__ anything that can be parsed as a date (`"8/16/1987"`) 
-- __epochtime (`integer`)__ number of seconds from the current time (`1416283449392`)
+- __jsdate `object`__ a javascript date object (Eg. `new Date("8/16/1987")`)
+- __datestring `string`__ anything that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __epochtime `integer`__ number of seconds from the current time (Eg. `1416283449392`)
 
 ##### Returns:
 
-- __(`object`)__ Native Date object set to the beginning of the given day
+- __`object`__ Native Date object set to the beginning of the given day
 
 __examples__:
 
@@ -140,13 +140,13 @@ hdate.getStartOfDay(1416583449392)
 
 ##### Arguments: 
 
-- __jsdate (`object`)__ a javascript date object (`new Date("8/16/1987")`)
-- __datestring (`string`)__ anything that can be parsed as a date (`"8/16/1987"`) 
-- __epochtime (`integer`)__ number of seconds from the current time (`1416283449392`)
+- __jsdate `object`__ a javascript date object (Eg. `new Date("8/16/1987")`)
+- __datestring `string`__ anything that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __epochtime `integer`__ number of seconds from the current time (Eg. `1416283449392`)
 
 ##### Returns:
 
-- __(`object`)__ Native Date object set to the beginning of the given week
+- __`object`__ Native Date object set to the beginning of the given week
 
 __examples__:
 
@@ -165,13 +165,13 @@ hdate.getStartOfWeek(1416283449392)
 
 ##### Arguments: 
 
-- __jsdate (`object`)__ a javascript date object (`new Date("8/16/1987")`)
-- __datestring (`string`)__ anything that can be parsed as a date (`"8/16/1987"`) 
-- __epochtime (`integer`)__ number of seconds from the current time (`1416283449392`)
+- __jsdate `object`__ a javascript date object (Eg. `new Date("8/16/1987")`)
+- __datestring `string`__ anything that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __epochtime `integer`__ number of seconds from the current time (Eg. `1416283449392`)
 
 ##### Returns:
 
-- __(`object`)__ Native Date object set to the beginning of the given month
+- __`object`__ Native Date object set to the beginning of the given month
 
 __examples__:
 
@@ -189,13 +189,13 @@ hdate.getStartOfMonth(1416283449392)
 
 ##### Arguments: 
 
-- __jsdate (`object`)__ a javascript date object (`new Date("8/16/1987")`)
-- __datestring (`string`)__ anything that can be parsed as a date (`"8/16/1987"`) 
-- __epochtime (`integer`)__ number of seconds from the current time (`1416283449392`)
+- __jsdate `object`__ a javascript date object (Eg. `new Date("8/16/1987")`)
+- __datestring `string`__ anything that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __epochtime `integer`__ number of seconds from the current time (Eg. `1416283449392`)
 
 ##### Returns:
 
-- __(`object`)__ Native Date object set to the beginning of the given year
+- __`object`__ Native Date object set to the beginning of the given year
 
 __examples__:
 
@@ -214,13 +214,13 @@ hdate.getStartOfYear(1416283449392)
 
 ##### Arguments: 
 
-- __jsdate (`object`)__ a javascript date object (`new Date("8/16/1987")`)
-- __datestring (`string`)__ anything that can be parsed as a date (`"8/16/1987"`) 
-- __epochtime (`integer`)__ number of seconds from the current time (`1416283449392`)
+- __jsdate `object`__ a javascript date object (Eg. `new Date("8/16/1987")`)
+- __datestring `string`__ anything that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __epochtime `integer`__ number of seconds from the current time (Eg. `1416283449392`)
 
 ##### Returns:
 
-- __(`boolean`)__: wether or not the given date is in a leap year
+- __`boolean`__: wether or not the given date is in a leap year
 
 __examples__:
 

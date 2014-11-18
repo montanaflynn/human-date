@@ -1,4 +1,4 @@
-var hdate = require('./index.js')
+var hdate = require('./humandate.js')
 var assert = require("assert")
 
 describe('relativeTime', function(){

@@ -1,6 +1,6 @@
 {
   "name": "human-date",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Return dates and times in easily readable formats",
   "main": "humandate.js",
   "scripts": {

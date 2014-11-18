@@ -1,38 +1,44 @@
 (function () {
   var humandate = {
+    months: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
     getHumanMonth: function getHumanMonth(index) {
+      var monthNumber, date
+
       if (typeof index === 'number') {
-        var monthNumber = index
+        monthNumber = index
       } else {
-        var date = new Date(index)
-        var monthNumber = date.getMonth() + 1
-      }
-      var months = []
-      months.push("January")
-      months.push("February")
-      months.push("March")
-      months.push("April")
-      months.push("May")
-      months.push("June")
-      months.push("July")
-      months.push("August")
-      months.push("September")
-      months.push("October")
-      months.push("November")
-      months.push("December")
-      return months[monthNumber - 1]
-    },
-    getHumanTime: function getHumanTime(input) {
-      if (typeof input === 'number') {
-        var seconds = input
-      } else {
-        var date = new Date(input)
-        var then = date.getTime()
-        var now = new Date().getTime()
-        var seconds = (now - then) / 1000 * -1
+        date = new Date(index)
+        monthNumber = date.getMonth() + 1
       }
 
-      var suffix = seconds < 0 ? "ago" : "from now"
+      return humandate.months[monthNumber - 1]
+    },
+    getHumanTime: function getHumanTime(input) {
+      var seconds, output, suffix, then, date, now
+
+      if (typeof input === 'number') {
+        seconds = input
+      } else {
+        date = new Date(input)
+        then = date.getTime()
+        now = new Date().getTime()
+        seconds = (now - then) / 1000 * -1
+      }
+
+      suffix = seconds < 0 ? "ago" : "from now"
       seconds = Math.abs(seconds)
 
       var times = {
@@ -44,7 +50,7 @@
         suffix: suffix
       }
 
-      var output = times.years ? times.years + " years " : ""
+      output  = times.years ? times.years + " years " : ""
       output += times.days ? times.days + " days " : ""
       output += times.hours ? times.hours + " hours " : ""
       output += times.minutes ? times.minutes + " minutes " : ""
@@ -54,13 +60,14 @@
       return output
     },
     getHumanDate: function getHumanDate(input) {
-      var input = new Date(input)
-      var monthName = this.getHumanMonth(input.getMonth() + 1)
-      var day = input.getDate()
-      var humanDate
+      var monthName, humanDate, year, day
+
+      input = new Date(input)
+      monthName = this.getHumanMonth(input.getMonth() + 1)
+      day = input.getDate()
 
       if (day > 3 && day < 21) {
-        humanDate = day + "th" 
+        humanDate = day + "th"
       } else {
         switch (day % 10) {
           case 1:
@@ -75,11 +82,10 @@
           default:
             humanDate = day + "th"
             break
-        }  
+        }
       }
-     
-      var year = input.getFullYear()
-      return monthName + " " + humanDate + ", " + year
+
+      return monthName + " " + humanDate + ", " + input.getFullYear()
     },
     getStartOfDay: function getStartOfDay(input) {
       var date = new Date(input)
@@ -122,7 +128,7 @@
     isLeapYear: function isLeapYear(input) {
       var date = new Date(input)
       var year = date.getFullYear();
-      if((year & 3) != 0) return false;
+      if((year & 3) !== 0) return false;
       return ((year % 100) != 0 || (year % 400) == 0);
     }
   }

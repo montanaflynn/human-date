@@ -2,21 +2,6 @@
 
 Making dates and times readable for humans. Plus a bunch of other date related goodies.
 
-<img height="256" width="256" src="https://i.imgur.com/jQJgw4n.png" style="position: absolute; top: 210px; right: 150px;">
-
-- [Quick Start](https://github.com/montanaflynn/human-date#quick-start)
-- [Methods](https://github.com/montanaflynn/human-date#methods)
-    - [getHumanDate](https://github.com/montanaflynn/human-date#gethumandatejsdate-or-datestring-or-numseconds)
-    - [getHumanTime](https://github.com/montanaflynn/human-date#gethumantimejsdate-or-datestring-or-numseconds-options)
-    - [getHumanMonth](https://github.com/montanaflynn/human-date#gethumanmonthjsdate-or-datestring-or-monthnum)
-    - [getStartOfDay](https://github.com/montanaflynn/human-date#getstartofdayjsdate-or-datestring)
-    - [getStartOfWeek](https://github.com/montanaflynn/human-date#getstartofweekjsdate-or-datestring)
-    - [getStartOfMonth](https://github.com/montanaflynn/human-date#getstartofmonthjsdate-or-datestring)
-    - [getStartOfYear](https://github.com/montanaflynn/human-date#getstartofyearjsdate-or-datestring)
-    - [isLeapYear](https://github.com/montanaflynn/human-date#isleapyearjsdate-or-datestring)
-- [Todos](https://github.com/montanaflynn/human-date#todos)
-- [Contributing](https://github.com/montanaflynn/human-date#contributing)
-
 ### Quick Start
 
 ##### Install:

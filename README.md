@@ -227,19 +227,19 @@ hdate.startOfYear(1416283449392)
 
 ##### Returns:
 
-- __`integer`__: the day of the year (Eg. `245`)
+- __`integer`__: the day of the year starting from 1
 
 ##### Examples:
 
 ```js
-hdate.isLeapYear("8/16/1987")
-// false
+hdate.dayOfYear("1/1/1987")
+// 1
 
-hdate.isLeapYear("8/16/1988")
-// true
+hdate.dayOfYear("8/16/1988")
+// 229
 
-hdate.isLeapYear(1416283449392)
-// false
+hdate.dayOfYear(1416283449392)
+// 322
 ```
 
 #### .isLeapYear(datestring or jsdate or epochtime)

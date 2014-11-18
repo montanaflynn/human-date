@@ -1,4 +1,4 @@
-# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg?style=flat-square)](https://www.npmjs.org/package/human-date) [![wercker continuous integration testing](http://img.shields.io/wercker/ci/546b83aba60c33c27c02add4.svg?style=flat-square)](https://app.wercker.com/project/bykey/2a16934d4add8e3fc3fb7ab83c7cc866)
+# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg?style=flat-square)](https://www.npmjs.org/package/human-date) [![wercker continuous integration testing](http://img.shields.io/wercker/ci/546b83aba60c33c27c02add4.svg?style=flat-square)](https://app.wercker.com/project/bykey/2a16934d4add8e3fc3fb7ab83c7cc866) [![npm dependencies](http://img.shields.io/gemnasium/montanaflynn/human-date.svg?style=flat-square)](https://gemnasium.com/montanaflynn/human-date)
 
 Making dates and times readable for humans. 
 
@@ -130,27 +130,6 @@ __Forks and pull requests are most welcomed.__
 
 Please add any methods to test.js and run `npm test` before sending a pull request. 
 
-### License
+### MIT license
 
-The MIT License (MIT)
-
-Copyright (c) 2014 Montana Flynn
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Copyright (c) 2014, Montana Flynn (http://anonfunction.com/)

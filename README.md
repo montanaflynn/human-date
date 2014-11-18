@@ -1,4 +1,4 @@
-# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg?style=flat-square)](https://www.npmjs.org/package/human-date) [![TravisCI Build Status](http://img.shields.io/travis/montanaflynn/human-date.svg?style=flat-square)](https://travis-ci.org/montanaflynn/human-date)
+# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg?style=flat-square)](https://www.npmjs.org/package/human-date) [![wercker continuous integration testing](http://img.shields.io/wercker/ci/546b83aba60c33c27c02add4.svg?style=flat-square)](https://app.wercker.com/project/bykey/2a16934d4add8e3fc3fb7ab83c7cc866)
 
 Making dates and times readable for humans. 
 

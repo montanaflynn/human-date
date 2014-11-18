@@ -5,13 +5,20 @@ Making dates and times readable for humans. Plus a bunch of other goodies.
 ### Quick Start
 
 ```shell
-# Install and save dependency in package.json
 npm install human-date --save
 ```
 
 ```js
-// Include as a short name for ease-of-use
 var hdate = require('human-date')
+
+hdate.getHumanDate("8/16/1987")
+// August 16th, 1987
+
+hdate.getHumanTime(60 * 60 * 24 * 2 * -1)
+// 2 days ago
+
+hdate.getHumanTime("8/16/2015")
+// 270 days, 22 hours, 27 minutes, 55 seconds from now
 ```
 
 ### Methods
@@ -171,10 +178,6 @@ __examples__:
 hdate.getStartOfYear("8-16-1987")
 // Thu Jan 01 1987 00:00:00 GMT-0800 (PST)
 ```
-
-`.isLeapYear(arg)`
-
-- __arg__ date | date string
 
 #### .isLeapYear(jsdate or datestring)
 

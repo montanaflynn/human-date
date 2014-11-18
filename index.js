@@ -14,7 +14,7 @@
       "November",
       "December"
     ],
-    getHumanMonth: function getHumanMonth(index) {
+    monthName: function monthName(index) {
       var monthNumber, date
 
       if (typeof index === 'number') {
@@ -25,7 +25,7 @@
       }
       return humandate.months[monthNumber - 1]
     },
-    getHumanTime: function getHumanTime(input, options) {
+    relativeTime: function relativeTime(input, options) {
       var seconds, time, suffix, then, date, now
       var output = []
 
@@ -70,7 +70,7 @@
 
       return output.join(', ') + " " + strSuffix
     },
-    getHumanDate: function getHumanDate(input) {
+    prettyPrint: function prettyPrint(input) {
       if (!input) {
         input = new Date()
       } else if (typeof input === 'number') {
@@ -78,7 +78,7 @@
       }
 
       var date = new Date(input)
-      var monthName = this.getHumanMonth(date.getMonth() + 1)
+      var monthName = this.monthName(date.getMonth() + 1)
       var day = date.getDate()
       var humanDate
 
@@ -104,12 +104,12 @@
       var year = date.getFullYear()
       return monthName + " " + humanDate + ", " + year
     },
-    getStartOfDay: function getStartOfDay(input) {
+    startOfDay: function startOfDay(input) {
       var date = new Date(input)
       date.setHours(0, 0, 0, 0)
       return date
     },
-    getStartOfWeek: function getStartOfWeek(input) {
+    startOfWeek: function startOfWeek(input) {
       var date = new Date(input)
       if (date.getDay()) {
         date.setHours(-Math.abs(date.getDay() - 1) * 24, 0, 0, 0)
@@ -118,7 +118,7 @@
       }
       return date
     },
-    getStartOfMonth: function getStartOfMonth(input) {
+    startOfMonth: function startOfMonth(input) {
       var date = new Date(input)
       if (date.getDate()) {
         date.setHours(-Math.abs(date.getDate() - 1) * 24, 0, 0, 0)
@@ -127,13 +127,13 @@
       }
       return date
     },
-    getStartOfYear: function getStartOfYear(input) {
+    startOfYear: function startOfYear(input) {
       var date = new Date(input)
       date.setMonth(0, 1)
       date.setHours(0, 0, 0, 0)
       return date
     },
-    getDayOfYear: function getDayOfYear(input) {
+    dayOfYear: function getDayOfYear(input) {
       var date = new Date(input)
       var dayCount = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
       var month = date.getMonth();

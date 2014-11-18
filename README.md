@@ -27,12 +27,12 @@ hdate.getHumanTime("8/16/2015")
 
 __arguments__: 
 
-- __jsdate__: a javascript date object (example: `new Date("8/16/1987")`)
-- __datestring__: anything that can be parsed as a date (example: `"8/16/1987"`)
+- __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
 
 __returns__: 
 
-- __string__: representing the date. (example: `"August 16th, 1987"`)
+- __Default__: (`string`) representing the date. (example: `"August 16th, 1987"`)
 
 __examples__:
 
@@ -44,24 +44,24 @@ hdate.getHumanDate('8-16-1987')
 // August 16th, 1987
 ```
 
-#### .getHumanTime(jsdate or datestring or numseconds, [object])
+#### .getHumanTime(jsdate or datestring or numseconds, [options])
 
 __arguments__: 
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
-- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
 - __numseconds__: (`integer`) number of seconds to or from the current time (example: `-32`)
-- __object__: options object with the following keys
+- __options__: object with the following keys
     - __futureSuffix__: (`string`) default: `"from now"`
     - __pastSuffix__: (`string`) default: `"from now"`
     - __returnObject__: (`boolean`) default: `false`
 
 __returns__: 
 
-Depending on the option `returnObject` a:
+Depending on the option `returnObject` you will get a string or an object:
 
-- __string__: `"August 16th, 1987"` (Default)
-- __object__: `{ seconds: 31, minutes: 5, hours: 4, days: 101, years: 27, past: true }`
+- __Default__: (`string`) `"August 16th, 1987"` _Default_
+- __Object__: (`object`) `{ seconds: 31, minutes: 5, hours: 4, days: 101, years: 27, past: true }`
 
 __examples__:
 
@@ -87,12 +87,12 @@ hdate.getHumanTime(new Date("8-16-1987"), {returnObject: true})
 __arguments__: 
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
-- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
 - __monthnum__: (`integer`) the month number, not 0-indexed (example: `12`)
 
 __returns__: 
 
-- __string__: `"December"`
+- __Default__: (`string`) `"December"`
 
 __examples__:
 
@@ -112,11 +112,11 @@ hdate.getHumanMonth(new Date("8-16-1987"))
 __arguments__: 
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
-- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
 
 __returns__: 
 
-- __object__: Native Date object set to the beginning of the given day
+- __Default__: (`object`) Native Date object set to the beginning of the given day
 
 __examples__:
 
@@ -130,11 +130,11 @@ hdate.getStartOfDay(1416283449392)
 __arguments__: 
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
-- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
 
 __returns__: 
 
-- __object__: Native Date object set to the beginning of the given week
+- __Default__: (`object`) Native Date object set to the beginning of the given week
 
 __examples__:
 
@@ -148,11 +148,11 @@ hdate.getStartOfWeek("8-16-1987")
 __arguments__: 
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
-- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
 
 __returns__: 
 
-- __object__: Native Date object set to the beginning of the given month
+- __Default__: (`object`) Native Date object set to the beginning of the given month
 
 __examples__:
 
@@ -166,11 +166,11 @@ hdate.getStartOfMonth("8-16-1987")
 __arguments__: 
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
-- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
 
 __returns__: 
 
-- __object__: Native Date object set to the beginning of the given year
+- __Default__: (`object`) Native Date object set to the beginning of the given year
 
 __examples__:
 
@@ -184,7 +184,7 @@ hdate.getStartOfYear("8-16-1987")
 __arguments__: 
 
 - __jsdate__: (`object`) a javascript date object (example: `new Date("8/16/1987")`)
-- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) or
+- __datestring__: (`string`) anything that can be parsed as a date (example: `"8/16/1987"`) 
 
 __returns__: 
 

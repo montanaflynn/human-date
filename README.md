@@ -16,7 +16,7 @@ var hdate = require('human-date')
 
 ### Methods
 
-#### `.getHumanDate(jsdate or datestring)`
+#### .getHumanDate(jsdate or datestring)
 
 __arguments__: 
 
@@ -37,7 +37,7 @@ hdate.getHumanDate('8-16-1987')
 // August 16th, 1987
 ```
 
-#### `.getHumanTime(jsdate or datestring or numseconds, [object])`
+#### .getHumanTime(jsdate or datestring or numseconds, [object])
 
 __arguments__: 
 
@@ -75,7 +75,7 @@ hdate.getHumanTime(new Date("8-16-1987"), {returnObject: true})
 // { seconds: 31, minutes: 5, hours: 4, days: 101, years: 27, past: true }
 ```
 
-#### `.getHumanMonth(jsdate or datestring or monthnum)`
+#### .getHumanMonth(jsdate or datestring or monthnum)
 
 __arguments__: 
 
@@ -100,7 +100,7 @@ hdate.getHumanMonth(new Date("8-16-1987"))
 // August
 ```
 
-#### `.getStartOfDay(jsdate or datestring)`
+#### .getStartOfDay(jsdate or datestring)
 
 __arguments__: 
 
@@ -118,7 +118,7 @@ hdate.getStartOfDay(1416283449392)
 // Mon Nov 17 2014 00:00:00 GMT-0800 (PST)
 ```
 
-#### `.getStartOfWeek(jsdate or datestring)`
+#### .getStartOfWeek(jsdate or datestring)
 
 __arguments__: 
 
@@ -136,7 +136,7 @@ hdate.getStartOfWeek("8-16-1987")
 // Mon Aug 10 1987 00:00:00 GMT-0700 (PDT)
 ```
 
-#### `.getStartOfMonth(jsdate or datestring)`
+#### .getStartOfMonth(jsdate or datestring)
 
 __arguments__: 
 
@@ -154,7 +154,7 @@ hdate.getStartOfMonth("8-16-1987")
 // Sat Aug 01 1987 00:00:00 GMT-0700 (PDT)
 ```
 
-#### `.getStartOfYear(jsdate or datestring)`
+#### .getStartOfYear(jsdate or datestring)
 
 __arguments__: 
 
@@ -176,7 +176,7 @@ hdate.getStartOfYear("8-16-1987")
 
 - __arg__ date | date string
 
-#### `.isLeapYear(jsdate or datestring)`
+#### .isLeapYear(jsdate or datestring)
 
 __arguments__: 
 

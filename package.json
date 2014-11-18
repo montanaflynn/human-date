@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/montanaflynn/human-date/issues"
   },
-  "homepage": "https://github.com/montanaflynn/human-date"
+  "homepage": "https://github.com/montanaflynn/human-date",
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
 }

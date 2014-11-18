@@ -1,48 +1,153 @@
 var hdate = require('./index.js')
+var assert = require("assert")
 
-function assert(msg, got, expected) {
-  if (got === expected) {
-    console.log(msg + "\033[32m - test passed \033[0m ")
-  } else {
-    console.log(msg + "\033[31m - test failed")
-    console.log(got + " != " + expected + " \033[0m ")
-  }
-}
+describe('relativeTime', function(){
+  describe('future', function(){
+    it('should work with an integer', function(){
+      assert.equal(hdate.relativeTime(122158874), "3 years, 318 days, 21 hours, 1 minute, 14 seconds from now")
+    })
+    it('should work with a string', function(){
+      assert.equal(typeof hdate.relativeTime("8-16-2020"), 'string')
+    })
+    it('should work with a date object', function(){
+      assert.equal(typeof hdate.relativeTime(new Date("8-16-2020")), 'string')
+    })
+  })
+  describe('past', function(){
+    it('should work with an integer', function(){
+      assert.equal(hdate.relativeTime(-122158874), "3 years, 318 days, 21 hours, 1 minute, 14 seconds ago")
+    })
+    it('should work with a string', function(){
+      assert.equal(typeof hdate.relativeTime("8-16-1987"), "string")
+    })
+    it('should work with a date object', function(){
+      assert.equal(typeof hdate.relativeTime(new Date("8-16-1987")), "string")
+    })
+  })
+  describe('options', function(){
+    it('should work with an optional future suffix', function(){
+      assert.equal(hdate.relativeTime(4, {futureSuffix: "in the future"}), "4 seconds in the future")
+    })
+    it('should work with an optional past suffix', function(){
+      assert.equal(hdate.relativeTime(-4, {pastSuffix: "in the past"}), "4 seconds in the past")
+    })
+    it('should work returning an object', function(){
+      assert.equal(typeof hdate.relativeTime(-4, {returnObject: true}), "object")
+    })
+  })
+})
 
-// Test time 
-assert("testing time in future with number", hdate.relativeTime(122158874), "3 years, 318 days, 21 hours, 1 minute, 14 seconds from now")
-assert("testing time in past with number", hdate.relativeTime(-122158874), "3 years, 318 days, 21 hours, 1 minute, 14 seconds ago")
-assert("testing time in future with date string", typeof hdate.relativeTime("8-16-2020"), 'string')
-assert("testing time in past with date string", typeof hdate.relativeTime("8-16-1987"), 'string')
-assert("testing time in future with date object", typeof hdate.relativeTime(new Date("8-16-2020")), 'string')
-assert("testing time in past with date object", typeof hdate.relativeTime(new Date("8-16-1987")), 'string')
-assert("testing time with optional future suffix", hdate.relativeTime(4, {futureSuffix: "in the future"}), "4 seconds in the future")
-assert("testing time with optional past suffix", hdate.relativeTime(-4, {pastSuffix: "in the past"}), "4 seconds in the past")
-assert("testing time returning as object", typeof hdate.relativeTime(-4, {returnObject: true}), "object")
+describe('prettyPrint', function(){
+  describe('future', function(){
+    it('should work with a string', function(){
+      assert.equal(hdate.prettyPrint("8-16-2020"), "August 16th, 2020")
+    })
+    it('should work with a date object', function(){
+      assert.equal(hdate.prettyPrint(new Date("8-16-2020")), "August 16th, 2020")
+    })
+  })
+  describe('past', function(){
+    it('should work with a string', function(){
+      assert.equal(hdate.prettyPrint("8-16-1987"), "August 16th, 1987")
+    })
+    it('should work with a date object', function(){
+      assert.equal(hdate.prettyPrint(new Date("8-16-1987")), "August 16th, 1987")
+    })
+  })
+})
 
-// Test date
-assert("testing date in future with date string", hdate.prettyPrint("8-16-2020"), "August 16th, 2020")
-assert("testing date in past with date string", hdate.prettyPrint("8-16-1987"), "August 16th, 1987")
-assert("testing date in future with date object", hdate.prettyPrint(new Date("8-16-2020")), "August 16th, 2020")
-assert("testing date in past with date object", hdate.prettyPrint(new Date("8-16-1987")), "August 16th, 1987")
+describe('monthName', function(){
+  it('should work with an integer', function(){
+    assert.equal(hdate.monthName(8), "August")
+  })
+  it('should work with a string', function(){
+    assert.equal(hdate.monthName("5-22-2012"), "May")
+  })
+  it('should work with a date object', function(){
+    assert.equal(hdate.monthName(new Date("7-4-2012")), "July")
+  })
+})
 
-// Test month
-assert("testing human month with month number", hdate.monthName(8), "August")
-assert("testing human month with date string", hdate.monthName("5-22-2012"), "May")
-assert("testing human month with date object", hdate.monthName(new Date("7-22-2012")), 'July')
+describe('startOf', function(){
+  describe('day', function(){
+    it('should work with a string', function(){
+      assert.equal(hdate.startOfDay("8/16/1987 07:59:25").toUTCString(), "Sun, 16 Aug 1987 07:00:00 GMT")
+    })
+    it('should work with a date object', function(){
+      assert.equal(hdate.startOfDay(new Date(1416283449392)).toUTCString(), "Mon, 17 Nov 2014 08:00:00 GMT")
+    })
+    it('should work with an integer', function(){
+      assert.equal(hdate.startOfDay(1416283449392).toUTCString(), "Mon, 17 Nov 2014 08:00:00 GMT")
+    })
+  })
+  describe('week', function(){
+    it('should work with a string', function(){
+      assert.equal(hdate.startOfWeek("8/16/1987 07:59:25").toUTCString(), "Mon, 10 Aug 1987 07:00:00 GMT")
+    })
+    it('should work with a date object', function(){
+      assert.equal(hdate.startOfWeek(new Date(1416283449392)).toUTCString(), "Mon, 17 Nov 2014 08:00:00 GMT")
+    })
+    it('should work with an integer', function(){
+      assert.equal(hdate.startOfWeek(1416283449392).toUTCString(), "Mon, 17 Nov 2014 08:00:00 GMT")
+    })
+  })
+  describe('month', function(){
+    it('should work with a string', function(){
+      assert.equal(hdate.startOfMonth("8/16/1987 07:59:25").toUTCString(), "Sat, 01 Aug 1987 07:00:00 GMT")
+    })
+    it('should work with a date object', function(){
+      assert.equal(hdate.startOfMonth(new Date(1416283449392)).toUTCString(), "Sat, 01 Nov 2014 07:00:00 GMT")
+    })
+    it('should work with an integer', function(){
+      assert.equal(hdate.startOfMonth(1416283449392).toUTCString(), "Sat, 01 Nov 2014 07:00:00 GMT")
+    })
+  })
+  describe('year', function(){
+    it('should work with a string', function(){
+      assert.equal(hdate.startOfYear("8/16/1987 07:59:25").toUTCString(), "Thu, 01 Jan 1987 08:00:00 GMT")
+    })
+    it('should work with a date object', function(){
+      assert.equal(hdate.startOfYear(new Date(1416283449392)).toUTCString(), "Wed, 01 Jan 2014 08:00:00 GMT")
+    })
+    it('should work with an integer', function(){
+      assert.equal(hdate.startOfYear(1416283449392).toUTCString(), "Wed, 01 Jan 2014 08:00:00 GMT")
+    })
+  })
+})
 
-// Test start of methods
-assert("testing get stat of day with date timestamp", hdate.startOfDay(1416283449392).toUTCString(), "Mon, 17 Nov 2014 08:00:00 GMT")
-assert("testing get start of day with date object", hdate.startOfDay(new Date(1416283449392)).toUTCString(), "Mon, 17 Nov 2014 08:00:00 GMT")
-assert("testing get start of week with date string", hdate.startOfWeek("8-16-1987").toUTCString(), "Mon, 10 Aug 1987 07:00:00 GMT")
-assert("testing get start of week with date object", hdate.startOfWeek(new Date("8-16-1987")).toUTCString(), "Mon, 10 Aug 1987 07:00:00 GMT")
-assert("testing get start of month with date string", hdate.startOfMonth("8-16-1987").toUTCString(), "Sat, 01 Aug 1987 07:00:00 GMT")
-assert("testing get start of month with date object", hdate.startOfMonth(new Date("8-16-1987")).toUTCString(), "Sat, 01 Aug 1987 07:00:00 GMT")
-assert("testing get start of year with date string", hdate.startOfYear("8-16-1987").toUTCString(), "Thu, 01 Jan 1987 08:00:00 GMT")
-assert("testing get start of year with date object", hdate.startOfYear(new Date("8-16-1987")).toUTCString(), "Thu, 01 Jan 1987 08:00:00 GMT")
+describe('dayOfYear', function(){
+  it('should work with a string', function(){
+    assert.equal(hdate.dayOfYear("1/1/1987"), 1)
+  })
+  it('should work with a date object', function(){
+    assert.equal(hdate.dayOfYear(new Date("8/16/1987")), 229)
+  })
+  it('should work with an integer', function(){
+    assert.equal(hdate.dayOfYear(1416283449392), 322)
+  })
+})
 
-// Test leap year
-assert("testing leap year is false from string", hdate.isLeapYear("8/16/1987"), false)
-assert("testing leap year is false from date object", hdate.isLeapYear(new Date("8/16/1987")), false)
-assert("testing leap year is true from string", hdate.isLeapYear("8/16/1988"), true)
-assert("testing leap year is true from date object", hdate.isLeapYear(new Date("8/16/1988")), true)
+describe('isLeapYear', function(){
+  describe('true', function(){
+    it('should work with a string', function(){
+      assert.equal(hdate.isLeapYear("8/16/1987"), false)
+    })
+    it('should work with a date object', function(){
+      assert.equal(hdate.isLeapYear(new Date("8/16/1987")), false)
+    })
+    it('should work with an integer', function(){
+      assert.equal(hdate.isLeapYear(1416326995059), false)
+    })
+  })
+  describe('false', function(){
+    it('should work with a string', function(){
+      assert.equal(hdate.isLeapYear("8/16/1988"), true)
+    })
+    it('should work with a date object', function(){
+      assert.equal(hdate.isLeapYear(new Date("8/16/1988")), true)
+    })
+    it('should work with an integer', function(){
+      assert.equal(hdate.isLeapYear(587718123456), true)
+    })
+  })
+})

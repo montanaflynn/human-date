@@ -235,7 +235,7 @@ hdate.startOfYear(1416283449392)
 hdate.dayOfYear("1/1/1987")
 // 1
 
-hdate.dayOfYear("8/16/1988")
+hdate.dayOfYear(new Date("8/16/1987"))
 // 229
 
 hdate.dayOfYear(1416283449392)
@@ -260,7 +260,7 @@ hdate.dayOfYear(1416283449392)
 hdate.isLeapYear("8/16/1987")
 // false
 
-hdate.isLeapYear("8/16/1988")
+hdate.isLeapYear(new Date("8/16/1988"))
 // true
 
 hdate.isLeapYear(1416283449392)
@@ -272,10 +272,9 @@ hdate.isLeapYear(1416283449392)
 - Add various options and helpers (prefixes, suffixes, etc...)
 - Add time information to prettyPrint (August 16th, 2014 at 5:00pm PST)
 - Support different locales.
-- Proper testing framework.
 
 ### Contributing
 
 __Forks and pull requests are most welcomed.__
 
-Please add any methods to test.js and run npm test to make sure nothing has broken before submitting a pull request. 
+Please add any methods to test.js and run `npm test` before sending a pull request. 

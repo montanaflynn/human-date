@@ -129,7 +129,7 @@
       var date = new Date(input)
       var year = date.getFullYear();
       if((year & 3) !== 0) return false;
-      return ((year % 100) != 0 || (year % 400) == 0);
+      return ((year % 100) !== 0 || (year % 400) === 0);
     }
   }
 

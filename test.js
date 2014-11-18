@@ -10,12 +10,14 @@ function assert(msg, got, expected) {
 }
 
 // Test time 
-assert("testing time in future with number", hdate.getHumanTime(4), "4 seconds from now")
-assert("testing time in past with number", hdate.getHumanTime(-4), "4 seconds ago")
+assert("testing time in future with number", hdate.getHumanTime(122158874), "3 years, 318 days, 21 hours, 1 minute, 14 seconds from now")
+assert("testing time in past with number", hdate.getHumanTime(-122158874), "3 years, 318 days, 21 hours, 1 minute, 14 seconds ago")
 assert("testing time in future with date string", typeof hdate.getHumanTime("8-16-2020"), 'string')
 assert("testing time in past with date string", typeof hdate.getHumanTime("8-16-1987"), 'string')
 assert("testing time in future with date object", typeof hdate.getHumanTime(new Date("8-16-2020")), 'string')
 assert("testing time in past with date object", typeof hdate.getHumanTime(new Date("8-16-1987")), 'string')
+assert("testing time with optional future suffix", hdate.getHumanTime(4, {futureSuffix: "in the future"}), "4 seconds in the future")
+assert("testing time with optional past suffix", hdate.getHumanTime(-4, {pastSuffix: "in the past"}), "4 seconds in the past")
 
 // Test date
 assert("testing date in future with date string", hdate.getHumanDate("8-16-2020"), "August 16th, 2020")

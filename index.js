@@ -22,7 +22,7 @@
       months.push("December")
       return months[monthNumber - 1]
     },
-    getHumanTime: function getHumanTime(input) {
+    getHumanTime: function getHumanTime(input, options) {
       if (typeof input === 'number') {
         var seconds = input
       } else {
@@ -32,7 +32,11 @@
         var seconds = (now - then) / 1000 * -1
       }
 
-      var suffix = seconds < 0 ? "ago" : "from now"
+      if (!options) options = {}
+      if (!options.futureSuffix) options.futureSuffix = "from now"
+      if (!options.pastSuffix) options.pastSuffix = "ago"
+
+      var suffix = seconds < 0 ? options.pastSuffix : options.futureSuffix
       seconds = Math.abs(seconds)
 
       var t = {
@@ -44,13 +48,14 @@
         suffix: suffix
       }
 
-      var o = []
-      if (t.years) t.years > 1 ? o.push(t.years + " years") : o.push(t.years + " year")
-      if (t.days) t.days > 1 ? o.push(t.days + " days") : o.push(t.days + " day")
-      if (t.hours) t.hours > 1 ? o.push(t.hours + " hours") : o.push(t.hours + " hour")
-      if (t.minutes) t.minutes > 1 ? o.push(t.minutes + " minutes") : o.push(t.minutes + " minute")
-      if (t.seconds) t.seconds > 1 ? o.push(t.seconds + " seconds") : o.push(t.seconds + " second")
-      return o.join(', ') + " " + t.suffix
+      var a = []
+      if (t.years) t.years > 1 ? a.push(t.years + " years") : a.push(t.years + " year")
+      if (t.days) t.days > 1 ? a.push(t.days + " days") : a.push(t.days + " day")
+      if (t.hours) t.hours > 1 ? a.push(t.hours + " hours") : a.push(t.hours + " hour")
+      if (t.minutes) t.minutes > 1 ? a.push(t.minutes + " minutes") : a.push(t.minutes + " minute")
+      if (t.seconds) t.seconds > 1 ? a.push(t.seconds + " seconds") : a.push(t.seconds + " second")
+
+      return a.join(', ') + " " + t.suffix
     },
     getHumanDate: function getHumanDate(input) {
       var input = new Date(input)

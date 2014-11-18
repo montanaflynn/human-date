@@ -35,7 +35,7 @@ hdate.getHumanTime("8/16/2015")
 
 - __`string`__ representing the date. (Eg. `"August 16th, 1987"`)
 
-__examples__:
+##### Examples:
 
 ```js
 hdate.getHumanDate('8-16-1987')
@@ -67,7 +67,7 @@ Depending on the option `returnObject` you will get a string or an object:
 - __default `string`__ `"27 years 96 days 21 hours 47 minutes 2 seconds ago"`
 - __`object`__ `{ seconds: 31, hours: 4, days: 101, years: 27, past: true }`
 
-__examples__:
+##### Examples:
 
 ```js
 hdate.getHumanTime(4)
@@ -98,7 +98,7 @@ hdate.getHumanTime(new Date("8-16-1987"), {returnObject: true})
 
 - __`string`__
 
-__examples__:
+##### Examples:
 
 ```js
 hdate.getHumanMonth(8)
@@ -123,7 +123,7 @@ hdate.getHumanMonth(new Date("8-16-1987"))
 
 - __`object`__ Native Date object set to the beginning of the given day
 
-__examples__:
+##### Examples:
 
 ```js
 hdate.getStartOfDay("8-16-1987")
@@ -148,7 +148,7 @@ hdate.getStartOfDay(1416583449392)
 
 - __`object`__ Native Date object set to the beginning of the given week
 
-__examples__:
+##### Examples:
 
 ```js
 hdate.getStartOfWeek("8-16-1987")
@@ -173,7 +173,7 @@ hdate.getStartOfWeek(1416283449392)
 
 - __`object`__ Native Date object set to the beginning of the given month
 
-__examples__:
+##### Examples:
 
 ```js
 hdate.getStartOfMonth(new Date("8-16-1987"))
@@ -197,7 +197,7 @@ hdate.getStartOfMonth(1416283449392)
 
 - __`object`__ Native Date object set to the beginning of the given year
 
-__examples__:
+##### Examples:
 
 ```js
 hdate.getStartOfYear(new Date("8-16-1987"))
@@ -222,7 +222,7 @@ hdate.getStartOfYear(1416283449392)
 
 - __`boolean`__: wether or not the given date is in a leap year
 
-__examples__:
+##### Examples:
 
 ```js
 hdate.isLeapYear("8/16/1987")

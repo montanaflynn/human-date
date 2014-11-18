@@ -4,7 +4,7 @@
   "description": "Return dates and times in easily readable formats",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "mocha"
   },
   "author": "Montana Flynn",
   "license": "ISC",
@@ -25,6 +25,10 @@
   },
   "homepage": "https://github.com/montanaflynn/human-date",
   "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jshint": "^1.9.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.1",
     "mocha": "^2.0.1"
   }
 }

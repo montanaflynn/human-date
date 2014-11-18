@@ -118,7 +118,7 @@ hdate.getHumanMonth(new Date("8-16-1987"))
 // August
 ```
 
-#### .startOfDay(datestring or jsdate)
+#### .startOfDay(datestring or jsdate or epochtime)
 
 ##### Arguments: 
 
@@ -143,7 +143,7 @@ hdate.startOfDay(1416583449392)
 // Fri Nov 21 2014 00:00:00 GMT-0800
 ```
 
-#### .startOfWeek(datestring or jsdate)
+#### .startOfWeek(datestring or jsdate or epochtime)
 
 ##### Arguments: 
 
@@ -168,7 +168,7 @@ hdate.startOfWeek(1416283449392)
 // Mon Nov 17 2014 00:00:00 GMT-0800 (PST)
 ```
 
-#### .startOfMonth(datestring or jsdate)
+#### .startOfMonth(datestring or jsdate or epochtime)
 
 ##### Arguments: 
 
@@ -192,7 +192,7 @@ hdate.startOfMonth("8-16-1987")
 hdate.startOfMonth(1416283449392)
 // Sat Nov 01 2014 00:00:00 GMT-0700 (PDT)
 ```
-#### .startOfYear(datestring or jsdate)
+#### .startOfYear(datestring or jsdate or epochtime)
 
 ##### Arguments: 
 
@@ -217,7 +217,32 @@ hdate.startOfYear(1416283449392)
 // Wed Jan 01 2014 00:00:00 GMT-0800 (PST)
 ```
 
-#### .isLeapYear(datestring or jsdate)
+#### .dayOfYear(datestring or jsdate or epochtime)
+
+##### Arguments: 
+
+- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
+- __epochtime `integer`__ milliseconds from the epoch (Eg. `1416283449392`)
+
+##### Returns:
+
+- __`integer`__: the day of the year (Eg. `245`)
+
+##### Examples:
+
+```js
+hdate.isLeapYear("8/16/1987")
+// false
+
+hdate.isLeapYear("8/16/1988")
+// true
+
+hdate.isLeapYear(1416283449392)
+// false
+```
+
+#### .isLeapYear(datestring or jsdate or epochtime)
 
 ##### Arguments: 
 

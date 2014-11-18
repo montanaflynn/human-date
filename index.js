@@ -27,7 +27,12 @@
       return humandate.months[monthNumber - 1]
     },
     getHumanTime: function getHumanTime(input) {
-      var seconds, output, suffix, then, date, now
+      var seconds, time, suffix, then, date, now
+      var output = []
+
+      function append(amount, string) {
+        output.push(amount + " " + string + (amount > 1 ? "s" : ""))
+      }
 
       if (typeof input === 'number') {
         seconds = input
@@ -41,7 +46,7 @@
       suffix = seconds < 0 ? "ago" : "from now"
       seconds = Math.abs(seconds)
 
-      var times = {
+      time = {
         seconds: Math.floor((((seconds % 31536000) % 86400) % 3600) % 60),
         minutes:  Math.floor((((seconds % 31536000) % 86400) % 3600) / 60),
         hours: Math.floor(((seconds % 31536000) % 86400) / 3600),
@@ -50,14 +55,13 @@
         suffix: suffix
       }
 
-      output  = times.years ? times.years + " years " : ""
-      output += times.days ? times.days + " days " : ""
-      output += times.hours ? times.hours + " hours " : ""
-      output += times.minutes ? times.minutes + " minutes " : ""
-      output += times.seconds ? times.seconds.toFixed() + " seconds " : ""
-      output += times.suffix
+      if (time.years) append(time.years, "year")
+      if (time.days) append(time.days, "day")
+      if (time.hours) append(time.hours, "hour")
+      if (time.minutes) append(time.minutes, "minute")
+      if (time.seconds) append(time.seconds, "second")
 
-      return output
+      return output.join(', ') + " " + time.suffix
     },
     getHumanDate: function getHumanDate(input) {
       var monthName, humanDate, year, day

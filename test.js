@@ -54,6 +54,11 @@ describe('prettyPrint', function () {
       assert.equal(hdate.prettyPrint(new Date('8-16-1987')), 'August 16th, 1987');
     });
   });
+  describe('options', function () {
+    it('should work when showing time', function () {
+      assert.equal(hdate.prettyPrint(new Date(1416448704578), { showTime: true }), 'November 19th, 2014 at 5:58 pm');
+    });
+  });
 });
 
 describe('monthName', function () {

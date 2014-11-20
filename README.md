@@ -30,13 +30,15 @@ hdate.monthName("8/16/2015")
 
 ### Methods
 
-#### .prettyPrint(datestring or jsdate or numseconds)
+#### .prettyPrint(datestring or jsdate or numseconds, [options])
 
 ##### Arguments: 
 
 - __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
 - __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
 - __numseconds `integer`__ seconds to or from the current time (Eg. `-32`)
+- __options__: object with the following keys
+    - __showTime `boolean`__: default: `false`
 
 ##### Returns:
 
@@ -52,7 +54,10 @@ hdate.prettyPrint(new Date('8-16-1987'))
 // August 16th, 1987
 
 hdate.prettyPrint(-6400)
-// November 17th, 2014
+// November 17th, 2014 (at the timeg)
+
+hdate.prettyPrint(new Date(1416448704578), { showTime: true })
+// November 19th, 2014 at 5:58 pm
 ```
 
 #### .relativeTime(datestring or jsdate or numseconds, [options])
@@ -120,8 +125,7 @@ hdate.monthName(new Date("8-16-1987"))
 
 ### Todos
 
-- Add various options and helpers (prefixes, suffixes, etc...)
-- Add time information to prettyPrint (August 16th, 2014 at 5:00pm PST)
+- Add various options (prefixes, etc...)
 - Support different locales.
 
 ### Contributing

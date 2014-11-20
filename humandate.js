@@ -71,16 +71,24 @@
         append(time.seconds, 'second');
       return output.join(', ') + ' ' + strSuffix;
     },
-    prettyPrint: function prettyPrint(input) {
+    prettyPrint: function prettyPrint(input, options) {
+      var date, day, humanDate, year, month, tstr, hours, minutes, ampm;
+
       if (!input) {
         input = new Date();
       } else if (typeof input === 'number') {
         input = new Date().setSeconds(input);
       }
-      var date = new Date(input);
-      var monthName = this.monthName(date.getMonth() + 1);
-      var day = date.getDate();
-      var humanDate;
+
+      if (!options)
+        options = {};
+
+      if (!options.showTime)
+        options.showTime = false;
+
+      date = new Date(input);
+      day = date.getDate();
+
       if (day > 3 && day < 21) {
         humanDate = day + 'th';
       } else if (day % 10 === 1) {
@@ -92,8 +100,18 @@
       } else {
         humanDate = day + 'th';
       }
-      var year = date.getFullYear();
-      return monthName + ' ' + humanDate + ', ' + year;
+
+      year = date.getFullYear();
+      month = this.monthName(date.getMonth() + 1);
+      hdate = month + ' ' + humanDate + ', ' + year;
+
+      hours = date.getHours();
+      minutes = date.getMinutes();
+      ampm = hours >= 12 ? 'pm' : 'am';
+      hours = (hours % 12) ? hours % 12 : 12;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      tstr = hours + ':' + minutes + ' ' + ampm;
+      return options.showTime ? hdate + " at " + tstr : hdate;
     }
   };
   if (typeof module !== 'undefined' && module.exports) {

@@ -56,9 +56,8 @@ describe('prettyPrint', function () {
   });
   describe('options', function () {
     it('should work when showing time', function () {
-      var t = new Date(1416448704578)
-      t = new Date(t.getUTCFullYear(), t.getUTCMonth(), t.getUTCDate(),  t.getUTCHours(), t.getUTCMinutes(), t.getUTCSeconds());
-      assert.equal(hdate.prettyPrint(t, { showTime: true }), 'November 20th, 2014 at 1:58 am');
+      var timestamp = hdate.toUTC(new Date(1416448704578));
+      assert.equal(hdate.prettyPrint(timestamp, { showTime: true }), 'November 20th, 2014 at 1:58 am');
     });
   });
 });
@@ -72,5 +71,20 @@ describe('monthName', function () {
   });
   it('should work with a date object', function () {
     assert.equal(hdate.monthName(new Date('7-4-2012')), 'July');
+  });
+});
+
+describe('toUTC', function () {
+  it('should work with nothing', function () {
+    assert.equal(Object.prototype.toString.call(hdate.toUTC()), '[object Date]');
+  });
+  it('should work with a string', function () {
+    assert.equal(hdate.toUTC('5-22-2012').toISOString(), '2012-05-22T14:00:00.000Z');
+  });
+  it('should work with a date object', function () {
+    assert.equal(hdate.toUTC(new Date('7-4-2012')).toISOString(), '2012-07-04T14:00:00.000Z');
+  });
+  it('should work with a timestamp', function () {
+    assert.equal(hdate.toUTC(1000000000000).toISOString(), '2001-09-09T08:46:40.000Z');
   });
 });

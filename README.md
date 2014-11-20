@@ -123,6 +123,37 @@ hdate.monthName(new Date("8-16-1987"))
 // August
 ```
 
+#### .toUTC(datestring or jsdate or monthnum)
+
+##### Arguments: 
+
+- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
+- __epochtime `integer`__ time since epoch, in milliseconds (Eg. `1416451096261`)
+
+##### Returns:
+
+- __`object`__ native Date object modified to UTC timezone.
+
+##### Examples:
+
+```js
+hdate.toUTC(1000000000000)
+// '2001-09-09T08:46:40.000Z'
+
+hdate.toUTC(1000000000000).getFullYear()
+// 2001
+
+hdate.toUTC("8-16-1987")
+// Sun Aug 16 1987 07:00:00 GMT-0700 (PDT)
+
+hdate.toUTC(new Date("8-16-1987"))
+// Sun Aug 16 1987 07:00:00 GMT-0700 (PDT)
+
+hdate.toUTC(new Date("8-16-1987")).toISOString()
+// 1987-08-16T14:00:00.000Z
+```
+
 ### Todos
 
 - Add various options (prefixes, etc...)

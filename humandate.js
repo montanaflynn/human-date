@@ -14,6 +14,18 @@
       'November',
       'December'
     ],
+    toUTC: function toUTC(input) {
+      var date = input ? new Date(input) : new Date();
+      date = new Date(
+        date.getUTCFullYear(), 
+        date.getUTCMonth(), 
+        date.getUTCDate(),  
+        date.getUTCHours(), 
+        date.getUTCMinutes(), 
+        date.getUTCSeconds()
+      );
+      return date;
+    },
     monthName: function monthName(index) {
       var monthNumber, date;
       if (typeof index === 'number') {

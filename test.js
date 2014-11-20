@@ -79,12 +79,12 @@ describe('toUTC', function () {
     assert.equal(Object.prototype.toString.call(hdate.toUTC()), '[object Date]');
   });
   it('should work with a string', function () {
-    assert.equal(hdate.toUTC('5-22-2012').toISOString(), '2012-05-22T14:00:00.000Z');
+    assert.equal(Object.prototype.toString.call(hdate.toUTC('5-22-2012')), '[object Date]');
   });
   it('should work with a date object', function () {
-    assert.equal(hdate.toUTC(new Date('7-4-2012')).toISOString(), '2012-07-04T14:00:00.000Z');
+    assert.equal(Object.prototype.toString.call(hdate.toUTC(new Date('7-4-2012'))), '[object Date]');
   });
   it('should work with a timestamp', function () {
-    assert.equal(hdate.toUTC(1000000000000).toISOString(), '2001-09-09T08:46:40.000Z');
+    assert.equal(Object.prototype.toString.call(hdate.toUTC(1000000000000)), '[object Date]');
   });
 });

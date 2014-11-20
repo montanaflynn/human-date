@@ -26,6 +26,20 @@
       );
       return date;
     },
+    isValidDate: function isDateObject(input) {
+      var date = new Date(input);
+      if (Object.prototype.toString.call(date) === "[object Date]") {
+        if (isNaN(date.getTime())) {
+          return false;
+        }
+        else {
+          return true;
+        }
+      }
+      else {
+        return false
+      }
+    },
     monthName: function monthName(index) {
       var monthNumber, date;
       if (typeof index === 'number') {

@@ -7,6 +7,7 @@
   "main": "humandate.js",
   "homepage": "https://github.com/montanaflynn/human-date",
   "scripts": {
+    "pretest" : "npm install",
     "test": "node_modules/.bin/mocha"
   },
   "repository": {

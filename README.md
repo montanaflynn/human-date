@@ -1,4 +1,4 @@
-# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg?style=flat-square)](https://www.npmjs.org/package/human-date) [![wercker continuous integration testing](http://img.shields.io/wercker/ci/546b83aba60c33c27c02add4.svg?style=flat-square)](https://app.wercker.com/project/bykey/2a16934d4add8e3fc3fb7ab83c7cc866) [![npm dependencies](http://img.shields.io/david/montanaflynn/human-date.svg?style=flat-square)](https://david-dm.org/montanaflynn/human-date)
+# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg)](https://www.npmjs.org/package/human-date) [![wercker continuous integration testing](http://img.shields.io/wercker/ci/546b83aba60c33c27c02add4.svg)](https://app.wercker.com/project/bykey/2a16934d4add8e3fc3fb7ab83c7cc866) [![npm dependencies](http://img.shields.io/david/montanaflynn/human-date.svg)](https://david-dm.org/montanaflynn/human-date)
 
 Making dates and times readable for humans. 
 
@@ -22,7 +22,7 @@ hdate.relativeTime(60 * 60 * 24 * 2 * -1)
 // 2 days ago
 
 hdate.relativeTime("8/16/2015")
-// 270 days, 22 hours, 27 minutes, 55 seconds from now
+// 125 days from now
 
 hdate.monthName("8/16/2015")
 // August
@@ -89,10 +89,10 @@ hdate.relativeTime(4, {futureSuffix: "in the future"})
 // 4 seconds in the future
 
 hdate.relativeTime("8-16-1987")
-// 27 years 96 days 21 hours 47 minutes 2 seconds ago
+// 27 years ago
 
 hdate.relativeTime(new Date("8-16-1987"))
-// 27 years 96 days 21 hours 47 minutes 2 seconds ago
+// 27 years ago
 
 hdate.relativeTime(new Date("8-16-1987"), {returnObject: true})
 // { seconds: 31, minutes: 5, hours: 4, days: 101, years: 27, past: true }

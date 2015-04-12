@@ -4,7 +4,7 @@ var assert = require('assert');
 describe('relativeTime', function () {
   describe('future', function () {
     it('should work with an integer', function () {
-      assert.equal(hdate.relativeTime(122158874), '3 years, 318 days, 21 hours, 1 minute, 14 seconds from now');
+      assert.equal(hdate.relativeTime(122158874), '3 years from now');
     });
     it('should work with a string', function () {
       assert.equal(typeof hdate.relativeTime('8-16-2020'), 'string');
@@ -15,7 +15,7 @@ describe('relativeTime', function () {
   });
   describe('past', function () {
     it('should work with an integer', function () {
-      assert.equal(hdate.relativeTime(-122158874), '3 years, 318 days, 21 hours, 1 minute, 14 seconds ago');
+      assert.equal(hdate.relativeTime(-122158874), '3 years ago');
     });
     it('should work with a string', function () {
       assert.equal(typeof hdate.relativeTime('8-16-1987'), 'string');

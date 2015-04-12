@@ -37,7 +37,7 @@
         }
       }
       else {
-        return false
+        return false;
       }
     },
     monthName: function monthName(index) {
@@ -53,9 +53,6 @@
     relativeTime: function relativeTime(input, options) {
       var seconds, time, suffix, then, date, now;
       var output = [];
-      function append(amount, string) {
-        output.push(amount + ' ' + string + (amount > 1 ? 's' : ''));
-      }
       if (typeof input === 'number') {
         seconds = input;
       } else {
@@ -85,6 +82,13 @@
       if (options.returnObject)
         return time;
       var strSuffix = time.past ? options.pastSuffix : options.futureSuffix;
+      var showNext = true;
+      function append(amount, string) {
+        if (showNext) {
+          showNext = false;
+          output.push(amount + ' ' + string + (amount > 1 ? 's' : ''));
+        }
+      }
       if (time.years)
         append(time.years, 'year');
       if (time.days)

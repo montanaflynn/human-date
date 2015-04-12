@@ -1,4 +1,4 @@
-# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg)](https://www.npmjs.org/package/human-date) [![wercker continuous integration testing](http://img.shields.io/wercker/ci/546b83aba60c33c27c02add4.svg)](https://app.wercker.com/project/bykey/2a16934d4add8e3fc3fb7ab83c7cc866) [![npm dependencies](http://img.shields.io/david/montanaflynn/human-date.svg)](https://david-dm.org/montanaflynn/human-date)
+# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg)](https://www.npmjs.org/package/human-date) [![wercker continuous integration testing](http://img.shields.io/wercker/ci/546b83aba60c33c27c02add4.svg)](https://app.wercker.com/project/bykey/2a16934d4add8e3fc3fb7ab83c7cc866) 
 
 Making dates and times readable for humans. 
 

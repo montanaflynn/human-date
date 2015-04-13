@@ -26,20 +26,6 @@
       );
       return date;
     },
-    isValidDate: function isDateObject(input) {
-      var date = new Date(input);
-      if (Object.prototype.toString.call(date) === "[object Date]") {
-        if (isNaN(date.getTime())) {
-          return false;
-        }
-        else {
-          return true;
-        }
-      }
-      else {
-        return false;
-      }
-    },
     monthName: function monthName(index) {
       var monthNumber, date;
       if (typeof index === 'number') {
@@ -51,7 +37,7 @@
       return humandate.months[monthNumber - 1];
     },
     relativeTime: function relativeTime(input, options) {
-      var seconds, time, suffix, then, date, now;
+      var seconds, time, suffix, then, date, now, isPast, showNext;
       var output = [];
       if (typeof input === 'number') {
         seconds = input;
@@ -61,15 +47,19 @@
         now = new Date().getTime();
         seconds = (now - then) / 1000 * -1;
       }
-      if (!options)
+      if (!options) {
         options = {};
-      if (!options.futureSuffix)
+      }
+      if (!options.futureSuffix) {
         options.futureSuffix = 'from now';
-      if (!options.pastSuffix)
+      }
+      if (!options.pastSuffix) {
         options.pastSuffix = 'ago';
-      if (!options.returnObject)
+      }
+      if (!options.returnObject) {
         options.returnObject = false;
-      var isPast = seconds < 0 ? true : false;
+      }
+      isPast = seconds < 0 ? true : false;
       seconds = Math.abs(seconds);
       time = {
         seconds: Math.floor(seconds % 31536000 % 86400 % 3600 % 60),
@@ -81,28 +71,33 @@
       };
       if (options.returnObject)
         return time;
-      var strSuffix = time.past ? options.pastSuffix : options.futureSuffix;
-      var showNext = true;
+      suffix = time.past ? options.pastSuffix : options.futureSuffix;
+      showNext = true;
       function append(amount, string) {
         if (showNext) {
           showNext = false;
           output.push(amount + ' ' + string + (amount > 1 ? 's' : ''));
         }
       }
-      if (time.years)
+      if (time.years) {
         append(time.years, 'year');
-      if (time.days)
+      }
+      if (time.days) {
         append(time.days, 'day');
-      if (time.hours)
+      }
+      if (time.hours) {
         append(time.hours, 'hour');
-      if (time.minutes)
+      }
+      if (time.minutes) {
         append(time.minutes, 'minute');
-      if (time.seconds)
+      }
+      if (time.seconds) {
         append(time.seconds, 'second');
-      return output.join(', ') + ' ' + strSuffix;
+      }
+      return output.join(', ') + ' ' + suffix;
     },
     prettyPrint: function prettyPrint(input, options) {
-      var date, day, humanDate, year, month, tstr, hours, minutes, ampm;
+      var date, hdate, day, humanDate, year, month, tstr, hours, minutes, ampm;
 
       if (!input) {
         input = new Date();
@@ -110,11 +105,13 @@
         input = new Date().setSeconds(input);
       }
 
-      if (!options)
+      if (!options) {
         options = {};
+      }
 
-      if (!options.showTime)
+      if (!options.showTime) {
         options.showTime = false;
+      }
 
       date = new Date(input);
       day = date.getDate();
@@ -144,6 +141,8 @@
       return options.showTime ? hdate + " at " + tstr : hdate;
     }
   };
+
+  /* istanbul ignore next: code loaders */
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = humandate;
   } else if (typeof define === 'function' && define.amd) {

@@ -17,11 +17,11 @@
     toUTC: function toUTC(input) {
       var date = input ? new Date(input) : new Date();
       date = new Date(
-        date.getUTCFullYear(), 
-        date.getUTCMonth(), 
-        date.getUTCDate(),  
-        date.getUTCHours(), 
-        date.getUTCMinutes(), 
+        date.getUTCFullYear(),
+        date.getUTCMonth(),
+        date.getUTCDate(),
+        date.getUTCHours(),
+        date.getUTCMinutes(),
         date.getUTCSeconds()
       );
       return date;
@@ -56,6 +56,9 @@
       if (!options.pastSuffix) {
         options.pastSuffix = 'ago';
       }
+      if (!options.presentText) {
+        options.presentText = 'now';
+      }
       if (!options.returnObject) {
         options.returnObject = false;
       }
@@ -71,6 +74,8 @@
       };
       if (options.returnObject)
         return time;
+      if(seconds === 0)
+        return options.presentText;
       suffix = time.past ? options.pastSuffix : options.futureSuffix;
       showNext = true;
       function append(amount, string) {

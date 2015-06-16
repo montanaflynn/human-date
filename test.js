@@ -27,12 +27,23 @@ describe('relativeTime', function () {
       assert.equal(typeof hdate.relativeTime(new Date('8-16-1987')), 'string')
     })
   })
+  describe('present', function () {
+    it('should work with an integer', function () {
+      assert.equal(hdate.relativeTime(0), 'now')
+    })
+    it('should work with a date object', function () {
+      assert.equal(hdate.relativeTime(new Date()), 'now')
+    })
+  })
   describe('options', function () {
     it('should work with an optional future suffix', function () {
       assert.equal(hdate.relativeTime(4, { futureSuffix: 'in the future' }), '4 seconds in the future')
     })
     it('should work with an optional past suffix', function () {
       assert.equal(hdate.relativeTime(-4, { pastSuffix: 'in the past' }), '4 seconds in the past')
+    })
+    it('should work with an optional present text', function () {
+      assert.equal(hdate.relativeTime(0, { presentText: 'a moment ago' }), 'a moment ago')
     })
     it('should work returning an object', function () {
       assert.equal(typeof hdate.relativeTime(-4, { returnObject: true }), 'object')

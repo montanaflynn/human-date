@@ -72,10 +72,12 @@
         years: Math.floor(seconds / 31536000),
         past: isPast
       };
-      if (options.returnObject)
+      if (options.returnObject) {
         return time;
-      if(seconds === 0)
+      }
+      if(seconds === 0) {
         return options.presentText;
+      }
       suffix = time.past ? options.pastSuffix : options.futureSuffix;
       showNext = true;
       function append(amount, string) {

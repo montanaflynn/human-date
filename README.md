@@ -70,6 +70,7 @@ hdate.prettyPrint(new Date(1416448704578), { showTime: true })
 - __options__: object with the following keys
     - __futureSuffix `string`__ default: `"from now"`
     - __pastSuffix `string`__ default: `"from now"`
+    - __presentText `string`__ default: `"now"`
     - __returnObject `boolean`__: default: `false`
 
 ##### Returns:

@@ -72,6 +72,7 @@ hdate.prettyPrint(new Date(1416448704578), { showTime: true })
     - __pastSuffix `string`__ default: `"from now"`
     - __presentText `string`__ default: `"now"`
     - __returnObject `boolean`__: default: `false`
+    - __allUnits `boolean`__: default: `false`
 
 ##### Returns:
 
@@ -97,6 +98,9 @@ hdate.relativeTime(new Date("8-16-1987"))
 
 hdate.relativeTime(new Date("8-16-1987"), {returnObject: true})
 // { seconds: 31, minutes: 5, hours: 4, days: 101, years: 27, past: true }
+
+hdate.relativeTime(75, {allUnits: true})
+// 1 minute, 15 seconds from now
 ```
 
 #### .monthName(datestring or jsdate or monthnum)

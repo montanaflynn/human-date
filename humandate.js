@@ -82,7 +82,7 @@
       showNext = true;
       function append(amount, string) {
         if (showNext) {
-          showNext = false;
+          showNext = options.allUnits;
           output.push(amount + ' ' + string + (amount > 1 ? 's' : ''));
         }
       }

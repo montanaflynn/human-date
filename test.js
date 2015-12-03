@@ -48,6 +48,9 @@ describe('relativeTime', function () {
     it('should work returning an object', function () {
       assert.equal(typeof hdate.relativeTime(-4, { returnObject: true }), 'object')
     })
+    it('should work with all units option', function () {
+      assert.equal(hdate.relativeTime(75, { allUnits: true }), '1 minute, 15 seconds from now')
+    })
   })
 })
 

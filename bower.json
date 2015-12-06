@@ -1,0 +1,23 @@
+{
+  "name": "human-date",
+  "description": "Return dates and times in easily readable formats",
+  "main": "humandate.js",
+  "authors": [
+    "Montana Flynn (http://anonfunction.com/)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "date",
+    "time",
+    "human",
+    "humanize",
+    "relative",
+    "readable"
+  ],
+  "homepage": "https://github.com/montanaflynn/human-date",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ]
+}

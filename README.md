@@ -1,6 +1,6 @@
-# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg)](https://www.npmjs.org/package/human-date) [![wercker continuous integration testing](http://img.shields.io/wercker/ci/546b83aba60c33c27c02add4.svg)](https://app.wercker.com/project/bykey/2a16934d4add8e3fc3fb7ab83c7cc866) 
+# human-date [![NPM Version](http://img.shields.io/npm/v/human-date.svg)](https://www.npmjs.org/package/human-date) [![wercker continuous integration testing](http://img.shields.io/wercker/ci/546b83aba60c33c27c02add4.svg)](https://app.wercker.com/project/bykey/2a16934d4add8e3fc3fb7ab83c7cc866)
 
-Making dates and times readable for humans. 
+Making dates and times readable for humans.
 
 ### Quick Start
 
@@ -32,9 +32,9 @@ hdate.monthName("8/16/2015")
 
 #### .prettyPrint(datestring or jsdate or numseconds, [options])
 
-##### Arguments: 
+##### Arguments:
 
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`)
 - __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
 - __numseconds `integer`__ seconds to or from the current time (Eg. `-32`)
 - __options__: object with the following keys
@@ -62,9 +62,9 @@ hdate.prettyPrint(new Date(1416448704578), { showTime: true })
 
 #### .relativeTime(datestring or jsdate or numseconds, [options])
 
-##### Arguments: 
+##### Arguments:
 
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`)
 - __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
 - __numseconds `integer`__ seconds to or from the current time (Eg. `-32`)
 - __options__: object with the following keys
@@ -105,9 +105,9 @@ hdate.relativeTime(75, {allUnits: true})
 
 #### .monthName(datestring or jsdate or monthnum)
 
-##### Arguments: 
+##### Arguments:
 
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`)
 - __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
 - __monthnum `integer`__ the month number, not 0-indexed (Eg. `12`)
 
@@ -130,9 +130,9 @@ hdate.monthName(new Date("8-16-1987"))
 
 #### .toUTC(datestring or jsdate or monthnum)
 
-##### Arguments: 
+##### Arguments:
 
-- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`) 
+- __datestring `string`__ that can be parsed as a date (Eg. `"8/16/1987"`)
 - __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
 - __epochtime `integer`__ time since epoch, in milliseconds (Eg. `1416451096261`)
 
@@ -168,8 +168,8 @@ hdate.toUTC(new Date("8-16-1987")).toISOString()
 
 __Forks and pull requests are most welcomed.__
 
-Please add any methods to test.js and run `npm test` before sending a pull request. 
+Please add any methods to test.js and run `npm test` before sending a pull request.
 
 ### MIT license
 
-Copyright (c) 2014, Montana Flynn (http://anonfunction.com/)
+Copyright (c) 2014-2016, Montana Flynn (http://anonfunction.com/)

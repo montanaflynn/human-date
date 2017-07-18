@@ -50,16 +50,16 @@
       if (!options) {
         options = {};
       }
-      if (!options.futureSuffix) {
+      if (!('futureSuffix' in options)) {
         options.futureSuffix = 'from now';
       }
-      if (!options.pastSuffix) {
+      if (!('pastSuffix' in options)) {
         options.pastSuffix = 'ago';
       }
-      if (!options.presentText) {
+      if (!('presentText' in options)) {
         options.presentText = 'now';
       }
-      if (!options.returnObject) {
+      if (!('returnObject' in options)) {
         options.returnObject = false;
       }
       isPast = seconds < 0 ? true : false;

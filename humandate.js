@@ -101,7 +101,7 @@
       if (time.seconds) {
         append(time.seconds, 'second');
       }
-      return output.join(', ') + ' ' + suffix;
+      return output.join(', ') + (suffix ? (' ' + suffix) : '');
     },
     prettyPrint: function prettyPrint(input, options) {
       var date, hdate, day, humanDate, year, month, tstr, hours, minutes, ampm;

@@ -75,7 +75,7 @@
       if (options.returnObject) {
         return time;
       }
-      if(seconds === 0) {
+      if(seconds < 1) {
         return options.presentText;
       }
       suffix = time.past ? options.pastSuffix : options.futureSuffix;

@@ -34,6 +34,9 @@ describe('relativeTime', function () {
     it('should work with a date object', function () {
       assert.equal(hdate.relativeTime(new Date()), 'now')
     })
+    it('should work with a string', function () {
+      assert.equal(hdate.relativeTime(new Date().toString()), 'now');
+    });
   })
   describe('options', function () {
     it('should work with an optional future suffix', function () {

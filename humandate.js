@@ -14,6 +14,20 @@
       'November',
       'December'
     ],
+    monthsAbbreviated: [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
+    ],
     toUTC: function toUTC(input) {
       var date = input ? new Date(input) : new Date();
       date = new Date(
@@ -26,7 +40,7 @@
       );
       return date;
     },
-    monthName: function monthName(index) {
+    monthName: function monthName(index, monthAbbreviated) {
       var monthNumber, date;
       if (typeof index === 'number') {
         monthNumber = index;
@@ -34,7 +48,7 @@
         date = new Date(index);
         monthNumber = date.getMonth() + 1;
       }
-      return humandate.months[monthNumber - 1];
+      return monthAbbreviated ? humandate.monthsAbbreviated[monthNumber -1] : humandate.months[monthNumber - 1];
     },
     relativeTime: function relativeTime(input, options) {
       var seconds, time, suffix, then, date, now, isPast, showNext;
@@ -120,6 +134,10 @@
         options.showTime = false;
       }
 
+      if (!options.monthAbbreviated) {
+        options.monthAbbreviated = false;
+      }
+
       date = new Date(input);
       day = date.getDate();
 
@@ -136,7 +154,7 @@
       }
 
       year = date.getFullYear();
-      month = this.monthName(date.getMonth() + 1);
+      month = this.monthName(date.getMonth() + 1, options.monthAbbreviated);
       hdate = month + ' ' + humanDate + ', ' + year;
 
       hours = date.getHours();

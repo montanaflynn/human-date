@@ -39,6 +39,7 @@ hdate.monthName("8/16/2015")
 - __numseconds `integer`__ seconds to or from the current time (Eg. `-32`)
 - __options__: object with the following keys
     - __showTime `boolean`__: default: `false`
+    - __monthAbbreviated `boolean`__: default: `false`
 
 ##### Returns:
 
@@ -58,6 +59,9 @@ hdate.prettyPrint(-6400)
 
 hdate.prettyPrint(new Date(1416448704578), { showTime: true })
 // November 19th, 2014 at 5:58 pm
+
+hdate.prettyPrint('12-25-1980', { monthAbbreviated: true })
+// Dec 25th, 1980
 ```
 
 #### .relativeTime(datestring or jsdate or numseconds, [options])
@@ -103,7 +107,7 @@ hdate.relativeTime(75, {allUnits: true})
 // 1 minute, 15 seconds from now
 ```
 
-#### .monthName(datestring or jsdate or monthnum)
+#### .monthName(datestring | jsdate | monthnum, monthAbbreviated)
 
 ##### Arguments:
 
@@ -111,6 +115,7 @@ hdate.relativeTime(75, {allUnits: true})
 - __jsdate `object`__ which is a javascript Date (Eg. `new Date("8/16/1987")`)
 - __monthnum `integer`__ the month number, not 0-indexed (Eg. `12`)
 
+- __monthAbbreviated `boolean`__ whether to abbreviate the month name (Eg. `Dec`)
 ##### Returns:
 
 - __`string`__
@@ -126,6 +131,9 @@ hdate.monthName("8-16-1987")
 
 hdate.monthName(new Date("8-16-1987"))
 // August
+
+hdate.monthName(new Date("8-16-1987"), true)
+// Aug
 ```
 
 #### .toUTC(datestring or jsdate or monthnum)

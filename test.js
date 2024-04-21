@@ -85,6 +85,10 @@ describe('prettyPrint', function () {
       var timestamp = hdate.toUTC(new Date(1416448704578))
       assert.equal(hdate.prettyPrint(timestamp, { showTime: true }), 'November 20th, 2014 at 1:58 am')
     })
+    it('should abbreviate month when specififed', function() {
+      var timestamp = hdate.toUTC(new Date(1416448704578))
+      assert.equal(hdate.prettyPrint(timestamp, { showTime: true, monthAbbreviated: true }), 'Nov 20th, 2014 at 1:58 am')
+    })
   })
   describe('suffixes', function () {
     it('should work with st', function () {
@@ -111,6 +115,15 @@ describe('monthName', function () {
   })
   it('should work with a date object', function () {
     assert.equal(hdate.monthName(new Date('7-4-2012')), 'July')
+  })
+  it('should abbreviate with an integer', function() {
+    assert.equal(hdate.monthName(10, true), 'Oct')
+  })
+  it('should abbreviate with a string', function() {
+    assert.equal(hdate.monthName('1-01-2012', true), 'Jan')
+  })
+  it('should abbreviate with a date object', function() {
+    assert.equal(hdate.monthName(new Date('11-11-2011'),true), 'Nov')
   })
 })
 
